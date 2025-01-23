@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+// main.js or main.ts
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 </script>
 
 <template>
-  <div>
+  <div class="fa-spin">
+    <h3>Hello world!</h3>
+    <button type="button" class="btn btn-primary">Primary</button>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
