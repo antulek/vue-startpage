@@ -1,0 +1,63 @@
+goals
+-create vue app
+-hosted and available
+-easy deploy
+-follows a good project structure
+
+features
+-search functionality
+-mobile friendly
+-multiple themes support
+-sites list is stored in local storage
+--supports import/export
+-settings exported/imported with json file
+
+fun features
+-typing part of site name to show only those that fit query - {https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fzmx3rlyqyqfa1.gif}
+
+todo
+-create a rough layout
+--make it mobile friendly
+-communications, common event bus between all components
+
+roadblocks
+-communications, common event bus between all components
+-how much you can fetch and embed into site from external sites (xkcd comic)
+
+parts of UI:
+-logo - image that obstructs big part of site
+--can feed array of image addresses that will cycle
+--style checks image colors and generated own site colorscheme
+-query area - query input with search and 'feeling lucky' buttons
+--has keyboard shortcuts
+--query input
+--search button - redirects to search engine results page
+--lucky button - opens first result from searc engine using 'feeling lucky'
+-sites area - part of site with site categories
+--can select and 'walk around' grid using arrow keys
+--category - displays category name and keeps sites together
+---site
+----subsite - simpler to create than site
+-----can be defined only by speciying sub-site part
+-----can define paremeter and parameter value
+-settings - allows for managing site
+-greeter - text saying something "hello XYZ" and weather or current date
+--features
+---hello {name} - ability to insert your name
+---weather fetching: sun/rain, temperature wind speed
+-separate screens
+-modules - displayed as part of site, have some external functionality
+--uses common interfaces
+---template/display
+---data saving/loading
+---api fetching
+--random inspiring quote
+--big clock
+--currencies
+--weather
+--random xkcd comic
+--interactive todolist
+--notes
+--pages saved for later
+--RSS feed
+-background
