@@ -2,29 +2,62 @@
 export default {
   data() {
     return {
-      greeting: 'Hello World!'
+      containerNumber: 12,
+      containerLimit: 66
+    }
+  },
+  methods: {
+    addContainer(add: number = 1){
+      this.containerNumber += add;
     }
   }
 }
 </script>
 
 <template>
-  <h3 class="greeting">{{ greeting }}</h3>
-
-  <div class="card">
-    <div class="card-header">
-      Header
+  <div class="row">
+    <button @click="addContainer(3)">Add</button>
+    <button @click="this.containerNumber = 10">Reset</button>
+    <button @click="addContainer(-3)">Remove</button>
+    <div>
+      {{containerNumber}}
     </div>
-    <div class="card-body">
-      Body
+  </div>
+  <div class="container">
+    <div class="special">
+      big
     </div>
+    <div v-for="index in this.containerNumber" :key="index">{{index}}</div>
   </div>
 </template>
 
 <style scoped>
-  h3 {
-    color: black;
-    font-weight: bold;
-    background-color: yellow;
-  }
+div{
+  background-color: dodgerblue;
+}
+
+.row{
+  display: inline-flex;
+}
+
+.container > div{
+  background-color: lightgrey;
+  border: 1px solid black;
+  text-align: center;
+  padding: 30px;
+}
+
+.special {
+  grid-area: 1/2/4/4;
+}
+
+
+.container{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+
+  align-content: center;
+
+  gap: 10px 100px;
+}
 </style>
