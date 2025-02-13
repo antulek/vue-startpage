@@ -11,6 +11,8 @@ features
 -sites list is stored in local storage
 --supports import/export
 -settings exported/imported with json file
+-can change number of columns
+--can change order of modules
 
 fun features
 -typing part of site name to show only those that fit query - {https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fzmx3rlyqyqfa1.gif}

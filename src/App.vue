@@ -4,13 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 // compnents imports
-import GridLayout from "./components/learning/GridLayout.vue";
+import Website from "./components/Website.vue";
 </script>
 
 <template>
-  <GridLayout>
+  <Website>
 
-  </GridLayout>
+  </Website>
 </template>
 
 <style scoped>

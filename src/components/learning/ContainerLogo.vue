@@ -23,6 +23,8 @@ export default {
   background-color: blue;
   grid-area: logo;
   color: white;
+
+  min-height: 10vh;
 }
 
 </style>

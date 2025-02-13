@@ -27,6 +27,11 @@ export default {
 .part{
   background-color: red;
   grid-area: v-bind(containerName);
+
+  min-width: 20vw;
+  min-height: 30vh;
+
+  border: 1px dashed black;
 }
 
 </style>
