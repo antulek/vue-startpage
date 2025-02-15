@@ -18,6 +18,12 @@ export default {
       default: "10px",
       required: false
     },
+    //dev
+    modules: {
+      type: Number,
+      default: 1,
+      required: false
+    }
   },
   computed:{
     gridTemplateColumnsStyle(){
@@ -36,11 +42,11 @@ export default {
 </script>
 <template>
   <div class="website-layout grid">
-    <Module></Module>
-    <Module></Module>
-    <Module></Module>
-    <Module></Module>
-    <Module></Module>
+    <Module container-name="logo"></Module>
+    <Module container-name="sidebar"></Module>
+    <Module container-name="content"></Module>
+    <Module container-name="sidebar2"></Module>
+    <Module container-name="footer"></Module>
   </div>
 </template>
 <style scoped>
@@ -52,7 +58,13 @@ export default {
 
   .grid{
     display: grid;
+    //grid-template-columns: v-bind(gridTemplateColumnsStyle);
     grid-template-columns: v-bind(gridTemplateColumnsStyle);
+    grid-template-rows: v-bind(gridTemplateColumnsStyle);
+    grid-template-areas:
+    "logo logo logo"
+    "sidebar content sidebar2"
+    "footer content sidebar2";
     column-gap: v-bind(columnGap);
     row-gap: v-bind(rowGap);
   }
@@ -68,7 +80,8 @@ export default {
     }
 
     .grid{
-      grid-template-columns: v-bind(gridTemplateColumnsStyle);
+      //grid-template-columns: v-bind(gridTemplateColumnsStyle);
+
     }
   }
 </style>

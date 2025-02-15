@@ -18,13 +18,30 @@ fun features
 -typing part of site name to show only those that fit query - {https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fzmx3rlyqyqfa1.gif}
 
 todo
--create a rough layout
---make it mobile friendly
+[x]create a rough layout
+[x]-make it mobile friendly
 -communications, common event bus between all components
+
+Core element and data flow between them
+1)query area
+2)categories and sites
+3)category/site form
+4)import/export
+
+data flow
+1 - pressing search/lucky button when query was typed
+1+2 - pressing site button when query was typed
+2 - changing order of sites/categories, moving site to different category
+3 - addding/editing site/category
+4 - importing exporting sites
+4 + x - importing/exporting data from different modules
+
 
 roadblocks
 -communications, common event bus between all components
 -how much you can fetch and embed into site from external sites (xkcd comic)
+-how to enable/disable modules
+-how to order modules on mobile and desktop
 
 parts of UI:
 -logo - image that obstructs big part of site
@@ -42,6 +59,7 @@ parts of UI:
 ----subsite - simpler to create than site
 -----can be defined only by speciying sub-site part
 -----can define paremeter and parameter value
+-editing form - allows adding/editing categories/sites
 -settings - allows for managing site
 -greeter - text saying something "hello XYZ" and weather or current date
 --features

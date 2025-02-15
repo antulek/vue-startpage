@@ -8,6 +8,7 @@ export default defineComponent({
   data(){
     return {
       columns: 1,
+      modules: 4,
     }
   }
 })
@@ -15,15 +16,9 @@ export default defineComponent({
 <template>
   <div>
     <input type="number" min="1" max="5" v-model="columns">
-    <WebsiteLayout :columns="columns">
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div><div>1</div>
-      <div>1</div>
-      <div>1</div>
+    <input type="number" min="1" max="25" v-model="modules">
+    <WebsiteLayout :columns="columns" :modules="modules">
+
     </WebsiteLayout>
   </div>
 </template>
