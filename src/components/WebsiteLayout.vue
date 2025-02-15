@@ -37,12 +37,10 @@ export default {
   components: {
     Module
   }
-
 }
 </script>
 <template>
   <div class="website-layout grid">
-    <Module container-name="logo"></Module>
     <Module container-name="sidebar"></Module>
     <Module container-name="content"></Module>
     <Module container-name="sidebar2"></Module>

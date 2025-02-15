@@ -1,4 +1,5 @@
 <script>
+import emitter from "../eventBus.js";
 export default {
   props: {
     containerName: {
@@ -9,12 +10,26 @@ export default {
     height: {
       type: String,
     }
+  },
+  data(){
+    return {
+      message: "",
+    }
+  },
+  mounted() {
+    emitter.on('event', value =>{
+      this.message = value;
+    });
   }
 }
 </script>
 <template>
   <div class="module grid">
     {{containerName}}
+    {{ message }}
+    <slot>
+
+    </slot>
   </div>
 </template>
 <style scoped>
