@@ -1,5 +1,8 @@
 <script>
 import Module from "./Module.vue";
+import LogoModule from "./modules/LogoModule.vue"
+import QueryModule from "./modules/QueryModule.vue"
+import CategoriesModule from "./modules/CategoriesModule.vue"
 
 export default {
   props: {
@@ -35,21 +38,33 @@ export default {
     }
   },
   components: {
-    Module
+    Module,
+    LogoModule,
+    QueryModule,
+    CategoriesModule
   }
 }
 </script>
 <template>
   <div class="website-layout grid">
-    <Module container-name="sidebar"></Module>
-    <Module container-name="content"></Module>
-    <Module container-name="sidebar2"></Module>
-    <Module container-name="footer"></Module>
+    <Module container-name="logo">
+      <LogoModule>
+
+      </LogoModule>
+    </Module>
+    <Module container-name="query">
+      <QueryModule></QueryModule>
+    </Module>
+    <Module container-name="categories">
+      <CategoriesModule>
+asd
+      </CategoriesModule>
+    </Module>
+
   </div>
 </template>
 <style scoped>
   .website-layout{
-    background-color: aquamarine;
     min-width: 100vw;
     min-height: 100vh;
   }
@@ -57,29 +72,16 @@ export default {
   .grid{
     display: grid;
     //grid-template-columns: v-bind(gridTemplateColumnsStyle);
-    grid-template-columns: v-bind(gridTemplateColumnsStyle);
-    grid-template-rows: v-bind(gridTemplateColumnsStyle);
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     grid-template-areas:
-    "logo logo logo"
-    "sidebar content sidebar2"
-    "footer content sidebar2";
+    "logo"
+    "query"
+    "categories";
     column-gap: v-bind(columnGap);
     row-gap: v-bind(rowGap);
+
+    background-color: #0a58ca;
   }
 
-  @media only screen and (min-width: 768px) {
-    .website-layout{
-      background-color: red;
-      min-width: 90vw;
-      min-height: 90vh;
-
-      margin: 5vh;
-      margin-inline: 5vw;
-    }
-
-    .grid{
-      //grid-template-columns: v-bind(gridTemplateColumnsStyle);
-
-    }
-  }
 </style>

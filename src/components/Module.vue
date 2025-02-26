@@ -7,45 +7,34 @@ export default {
       default: "space",
       required: false
     },
-    height: {
-      type: String,
-    }
   },
   data(){
     return {
-      message: "",
+
     }
   },
   mounted() {
-    emitter.on('event', value =>{
-      this.message = value;
-    });
+    //
   }
 }
 </script>
-<template>
-  <div class="module grid">
-    {{containerName}}
-    {{ message }}
+<template >
+  <div class="module module-grid">
     <slot>
-
+      {{containerName}}
     </slot>
   </div>
 </template>
 <style scoped>
-  .module{
-    border: 1px solid black;
-    background-color: darkred;
-
+  .module {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed lightgrey;
   }
 
-  .grid{
+  .module-grid{
+    display: flex;
     grid-area: v-bind(containerName);
   }
 
-  @media only screen and (min-width: 768px) {
-    .module{
-
-    }
-  }
 </style>
