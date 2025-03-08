@@ -1,10 +1,18 @@
 <script>
-import Module from "./Module.vue";
+import WebsiteSection from "./WebsiteSection.vue"
+import Module from "./modules/Module.vue"
 import LogoModule from "./modules/LogoModule.vue"
 import QueryModule from "./modules/QueryModule.vue"
 import CategoriesModule from "./modules/CategoriesModule.vue"
 
 export default {
+  components: {
+    WebsiteSection,
+    Module,
+    LogoModule,
+    QueryModule,
+    CategoriesModule
+  },
   props: {
     columns: {
       type: Number,
@@ -37,30 +45,40 @@ export default {
       return text;
     }
   },
-  components: {
-    Module,
-    LogoModule,
-    QueryModule,
-    CategoriesModule
+  data() {
+    return {
+      logo: {
+        src: "https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png",
+        scale: 10,
+        repeat: true
+      }
+    }
   }
 }
 </script>
 <template>
-  <div class="website-layout grid">
-    <Module container-name="logo">
-      <LogoModule>
-
+  <div class="website-layout website-layout-grid">
+    <WebsiteSection container-name="logo">
+      <LogoModule v-bind="logo">
+        L.O.G.O
       </LogoModule>
-    </Module>
-    <Module container-name="query">
+    </WebsiteSection>
+    <WebsiteSection container-name="query">
       <QueryModule></QueryModule>
-    </Module>
-    <Module container-name="categories">
+    </WebsiteSection>
+    <WebsiteSection container-name="categories">
       <CategoriesModule>
-asd
-      </CategoriesModule>
-    </Module>
 
+      </CategoriesModule>
+    </WebsiteSection>
+    <WebsiteSection container-name="module">
+      <Module>
+        MODULE
+      </Module>
+    </WebsiteSection>
+    <WebsiteSection container-name="module-child">
+      Module child
+    </WebsiteSection>
   </div>
 </template>
 <style scoped>
@@ -69,19 +87,19 @@ asd
     min-height: 100vh;
   }
 
-  .grid{
+  .website-layout-grid{
     display: grid;
-    //grid-template-columns: v-bind(gridTemplateColumnsStyle);
-    grid-template-columns: auto;
+    grid-template-columns: v-bind(gridTemplateColumnsStyle);
+    //grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
     "logo"
     "query"
-    "categories";
+    "categories"
+    "module"
+    "module-child";
     column-gap: v-bind(columnGap);
     row-gap: v-bind(rowGap);
-
-    background-color: #0a58ca;
   }
 
 </style>

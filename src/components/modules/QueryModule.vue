@@ -1,23 +1,37 @@
 <script>
+import Module from './Module.vue';
 
+export default {
+  extends: Module,
+  components: {
+    Module
+  },
+  data() {
+    return{
+
+    }
+  },
+  methods: {
+
+  }
+}
 </script>
 <template>
-  <div class="query-module">
-    <div class="query-module-input">
-      <input type="text">
-      <button>Search</button>
-      <button>Lucky</button>
+  <Module>
+    <div class="query-module">
+      <div class="query-module-input">
+        <input type="text">
+        <button>Search</button>
+        <button>Lucky</button>
+      </div>
     </div>
-    <slot>
-
-    </slot>
-  </div>
+  </Module>
 </template>
 <style scoped>
   .query-module{
-    min-width: 100%;
-    min-height: 100%;
-    background-color: #0dcaf0;
+    width: 100%;
+    height: 100%;
+    background-color: magenta;
   }
 
   .query-module-input{
