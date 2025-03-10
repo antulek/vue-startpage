@@ -15,7 +15,7 @@ export default {
     },
     scale: {
       type: Number,
-      default: 100,
+      default: 0,
       required: false
     },
     repeat: {
@@ -34,7 +34,7 @@ export default {
       return 'url('+this.src+')';
     },
     scaleCSS(){
-      return this.scale+"%";
+      return this.scale ? this.scale+"%" : "auto 100%";
     },
     repeatCSS(){
       return this.repeat ? "repeat" : "no-repeat";
@@ -62,7 +62,6 @@ export default {
 </template>
 <style scoped>
   .logo-module {
-    background-color: forestgreen;
     height: 100%;
     background-image: v-bind(backgroundImageCss);
     background-size: v-bind(scaleCSS);

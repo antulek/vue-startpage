@@ -20,7 +20,9 @@ fun features
 todo
 [x]create a rough layout
 [x]-make it mobile friendly
--communications, common event bus between all components
+[x]-split elements of site into separate components
+[x]-modules extends main module component
+[x]communications, common event bus between all components
 
 Core element and data flow between them
 1)query area
@@ -81,3 +83,17 @@ parts of UI:
 --pages saved for later
 --RSS feed
 -background
+
+Data schema for modules:
+categories:
+-categories
+-name
+-icon
+-color
+--sites[]
+---name
+---address
+---search_address
+---icon
+---color
+---subsites[]
