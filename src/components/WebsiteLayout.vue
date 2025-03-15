@@ -4,6 +4,7 @@ import Module from "./modules/Module.vue"
 import LogoModule from "./modules/LogoModule.vue"
 import QueryModule from "./modules/QueryModule.vue"
 import CategoriesModule from "./modules/CategoriesModule.vue"
+import SettingsModule from "./modules/SettingsModule.vue"
 
 export default {
   components: {
@@ -11,7 +12,8 @@ export default {
     Module,
     LogoModule,
     QueryModule,
-    CategoriesModule
+    CategoriesModule,
+    SettingsModule
   },
   props: {
     columns: {
@@ -50,7 +52,6 @@ export default {
       logo: {
         src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/640px-Wikipedia-logo-v2.svg.png"
       },
-
       categories: [
         {
           "name": "News",
@@ -179,20 +180,15 @@ export default {
 
       </CategoriesModule>
     </WebsiteSection>
-    <WebsiteSection container-name="module">
-      <Module>
-        MODULE
-      </Module>
-    </WebsiteSection>
-    <WebsiteSection container-name="module-child">
-      Module child
+    <WebsiteSection container-name="settings">
+      <SettingsModule></SettingsModule>
     </WebsiteSection>
   </div>
 </template>
 <style scoped>
 .website-layout {
   min-width: 100vw;
-  min-height: 100vh;
+  //min-height: 100vh;
 }
 
 .website-layout-grid {
@@ -203,8 +199,7 @@ export default {
     "logo"
     "query"
     "categories"
-    "module"
-    "module-child";
+    "settings";
   column-gap: v-bind(columnGap);
   row-gap: v-bind(rowGap);
 }

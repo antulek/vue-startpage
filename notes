@@ -14,6 +14,13 @@ features
 -can change number of columns
 --can change order of modules
 
+style hierarchy:
+-scoped style inside vue component - most basic styling, that holds very basic structure of site and elements
+-main.css - basic paddings and rules that make basic site look 'good enough', or rules that are needed by all themes
+-theme.css - sits atop of everything else, changes basic site into anything you want
+--default.css - default theme
+*colorscheme.[css/js/vue] - some strict definition of colors used in page
+
 fun features
 -typing part of site name to show only those that fit query - {https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fzmx3rlyqyqfa1.gif}
 
@@ -63,6 +70,19 @@ parts of UI:
 -----can define paremeter and parameter value
 -editing form - allows adding/editing categories/sites
 -settings - allows for managing site
+--edit mode switcher
+---add category
+---add site
+---@[create/add][site/category] - opens form for adding/editing site/category
+---layout editor
+---force mobile/desktop
+--theme selector
+--@themeSwitch("newTheme.css")
+--import/export configuration
+---local storage
+---file
+---*pastebin
+---@import/export([localStorage/file/pastebin])
 -greeter - text saying something "hello XYZ" and weather or current date
 --features
 ---hello {name} - ability to insert your name

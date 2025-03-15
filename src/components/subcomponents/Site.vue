@@ -10,14 +10,24 @@ export default {
 }
 </script>
 <template>
-  <div class="site" :style="'color:'+site.color">
-    {{ site.icon }}
-    {{ site.name }}
+  <div class="site">
+    <div class="site-header">
+      <div class="site-header-icon">
+        {{ site.icon }}
+      </div>
+      <div class="site-header-name">
+        {{ site.name }}
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>
   .site {
     //flex-direction: column;
-    border: 1px dashed cadetblue;
+  }
+
+  .site-header {
+    display: flex;
+    flex-direction: row;
   }
 </style>
