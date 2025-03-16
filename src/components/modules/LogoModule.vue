@@ -9,8 +9,7 @@ export default {
   props: {
     src: {
       type: String,
-      //default: "https://previews.123rf.com/images/valueinvestor/valueinvestor1904/valueinvestor190400048/123603982-seamless-little-cat-pattern.jpg",
-      default: "https://64.media.tumblr.com/3b5440683e71e2d39f998c6ed99c3feb/tumblr_ord7ll2peg1sx56xso1_1280.gif",
+      default: "",
       required: false
     },
     scale: {

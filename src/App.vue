@@ -8,10 +8,13 @@ import '../src/assets/styles/main.css';
 import '../src/assets/styles/themes/default.css';
 // compnents imports
 import Website from "./components/Website.vue";
+import { useDataStore } from './stores/dataStore.js';
+
+const dataStore = useDataStore();
 </script>
 
 <template>
-  <Website>
+  <Website :data-store="dataStore">
 
   </Website>
 </template>

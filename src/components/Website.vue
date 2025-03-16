@@ -6,6 +6,13 @@ import emitter from "../eventBus.js";
 
 export default defineComponent({
   components: {WebsiteLayout},
+  props: {
+    dataStore: {
+      type: Object,
+      default: null,
+      required: true
+    }
+  },
   data(){
     return {
       columns: 1,
@@ -19,7 +26,7 @@ export default defineComponent({
 </script>
 <template>
   <div>
-    <WebsiteLayout :columns="columns" :modules="modules">
+    <WebsiteLayout :data-store="dataStore" :columns="columns" :modules="modules">
 
     </WebsiteLayout>
   </div>
