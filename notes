@@ -37,7 +37,24 @@ Core element and data flow between them
 3)category/site form
 4)import/export
 
-data flow
+Data schema for modules:
+themes:
+-themeList[]
+-currentTheme
+categories:
+-categories
+-name
+-icon
+-color
+--sites[]
+---name
+---address
+---search_address
+---icon
+---color
+---subsites[]
+
+modules interaction with data:
 1 - pressing search/lucky button when query was typed
 1+2 - pressing site button when query was typed
 2 - changing order of sites/categories, moving site to different category
@@ -104,16 +121,4 @@ parts of UI:
 --RSS feed
 -background
 
-Data schema for modules:
-categories:
--categories
--name
--icon
--color
---sites[]
----name
----address
----search_address
----icon
----color
----subsites[]
+

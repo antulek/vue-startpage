@@ -181,14 +181,23 @@ export default {
       </CategoriesModule>
     </WebsiteSection>
     <WebsiteSection container-name="settings">
-      <SettingsModule></SettingsModule>
+      <div class="footer">
+        <SettingsModule></SettingsModule>
+      </div>
     </WebsiteSection>
+
   </div>
 </template>
 <style scoped>
+.footer {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+}
+
 .website-layout {
   min-width: 100vw;
-  //min-height: 100vh;
+  min-height: 100vh;
 }
 
 .website-layout-grid {
