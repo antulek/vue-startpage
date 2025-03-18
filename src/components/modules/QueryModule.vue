@@ -31,7 +31,6 @@ export default {
   .query-module{
     width: 100%;
     height: 100%;
-    background-color: magenta;
   }
 
   .query-module-input{
@@ -50,8 +49,6 @@ export default {
   }
 
   input, button{
-    background-color: white;
-    border: 1px inset black;
-    padding: 0px;
+
   }
 </style>

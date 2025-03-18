@@ -1,0 +1,160 @@
+{
+  "categories": [
+    {
+      "name": "News",
+      "icon": "📰",
+      "color": "#FF5733",
+      "sites": [
+        {
+          "name": "BBC",
+          "address": "https://www.bbc.com",
+          "search_address": "https://www.bbc.com/search?q=",
+          "icon": "🌍",
+          "color": "#005BBC"
+        },
+        {
+          "name": "CNN",
+          "address": "https://www.cnn.com",
+          "search_address": "https://www.cnn.com/search?q=",
+          "icon": "📺",
+          "color": "#CC0000"
+        },
+        {
+          "name": "The Guardian",
+          "address": "https://www.theguardian.com",
+          "search_address": "https://www.theguardian.com/search?q=",
+          "icon": "📰",
+          "color": "#052962"
+        },
+        {
+          "name": "NY Times",
+          "address": "https://www.nytimes.com",
+          "search_address": "https://www.nytimes.com/search?query=",
+          "icon": "🗞️",
+          "color": "#000000"
+        }
+      ]
+    },
+    {
+      "name": "Sports",
+      "icon": "⚽",
+      "color": "#28A745",
+      "sites": [
+        {
+          "name": "ESPN",
+          "address": "https://www.espn.com",
+          "search_address": "https://www.espn.com/search?q=",
+          "icon": "🏆",
+          "color": "#1E3A8A"
+        },
+        {
+          "name": "Sports Illustrated",
+          "address": "https://www.si.com",
+          "search_address": "https://www.si.com/search?q=",
+          "icon": "🏀",
+          "color": "#F4A261"
+        },
+        {
+          "name": "Bleacher Report",
+          "address": "https://www.bleacherreport.com",
+          "search_address": "https://www.bleacherreport.com/search?q=",
+          "icon": "⚾",
+          "color": "#FFD700"
+        }
+      ]
+    },
+    {
+      "name": "Technology",
+      "icon": "💻",
+      "color": "#007BFF",
+      "sites": [
+        {
+          "name": "TechCrunch",
+          "address": "https://www.techcrunch.com",
+          "search_address": "https://techcrunch.com/search?q=",
+          "icon": "🔧",
+          "color": "#4CAF50"
+        },
+        {
+          "name": "Wired",
+          "address": "https://www.wired.com",
+          "search_address": "https://www.wired.com/search?q=",
+          "icon": "🖥️",
+          "color": "#F44336"
+        },
+        {
+          "name": "The Verge",
+          "address": "https://www.theverge.com",
+          "search_address": "https://www.theverge.com/search?q=",
+          "icon": "📱",
+          "color": "#8B0000"
+        }
+      ]
+    },
+    {
+      "name": "Entertainment",
+      "icon": "🎬",
+      "color": "#FFC107",
+      "sites": [
+        {
+          "name": "Netflix",
+          "address": "https://www.netflix.com",
+          "search_address": "https://www.netflix.com/search?q=",
+          "icon": "🎥",
+          "color": "#E50914"
+        },
+        {
+          "name": "IMDb",
+          "address": "https://www.imdb.com",
+          "search_address": "https://www.imdb.com/find?q=",
+          "icon": "🎬",
+          "color": "#FF5733"
+        },
+        {
+          "name": "YouTube",
+          "address": "https://www.youtube.com",
+          "search_address": "https://www.youtube.com/results?search_query=",
+          "icon": "📺",
+          "color": "#FF0000"
+        }
+      ]
+    },
+    {
+      "name": "Science",
+      "icon": "🔬",
+      "color": "#17A2B8",
+      "sites": [
+        {
+          "name": "NASA",
+          "address": "https://www.nasa.gov",
+          "search_address": "https://www.nasa.gov/search?q=",
+          "icon": "🚀",
+          "color": "#F8F9FA"
+        },
+        {
+          "name": "National Geographic",
+          "address": "https://www.nationalgeographic.com",
+          "search_address": "https://www.nationalgeographic.com/search?q=",
+          "icon": "🌍",
+          "color": "#4CAF50"
+        },
+        {
+          "name": "Science Daily",
+          "address": "https://www.sciencedaily.com",
+          "search_address": "https://www.sciencedaily.com/releases/search?q=",
+          "icon": "🔬",
+          "color": "#007BFF"
+        }
+      ]
+    }
+  ],
+  "logo": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/640px-Wikipedia-logo-v2.svg.png"
+  },
+  "settings": {
+    "themes": {
+      "themesList": ["debug","default", "transparent"],
+      "currentTheme": "debug"
+    }
+  }
+}

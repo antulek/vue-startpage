@@ -28,10 +28,6 @@ export default {
   .categories-module {
     display: flex;
     flex-direction: row;
-    background-color: pink;
     height: 100%;
-
-
-    border: 2px solid magenta;
   }
 </style>

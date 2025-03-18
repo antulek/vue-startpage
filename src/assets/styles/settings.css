@@ -1,0 +1,42 @@
+/**
+    settings.css - please import this css file in SettingsModule.vue and all sub-components
+ */
+
+.dropdown{ top: 100% }
+.dropup{ bottom: 100% }
+
+.settings-module {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.settings-header {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+}
+
+.settings-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.settings-item-actions{
+    display: none;
+    position: absolute;
+//bottom: 100%;
+    width: 100%;
+}
+
+.settings-item-header:hover + .settings-item-actions{
+    display: block;
+}
+
+.settings-item-actions:hover{
+    display: block;
+}

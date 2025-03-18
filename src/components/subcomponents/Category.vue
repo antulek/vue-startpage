@@ -34,7 +34,6 @@ import Site from "./Site.vue";
   .category {
     flex-direction: row;
     width: 100%;
-    border: 2px solid blueviolet;
   }
 
   .category-header{

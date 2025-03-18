@@ -80,7 +80,7 @@ export default {
     </WebsiteSection>
     <WebsiteSection container-name="settings">
       <div class="footer">
-        <SettingsModule></SettingsModule>
+        <SettingsModule :settings-data="dataStore.settings"></SettingsModule>
       </div>
     </WebsiteSection>
   </div>

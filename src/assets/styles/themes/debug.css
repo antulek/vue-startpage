@@ -1,0 +1,29 @@
+body {
+    background-color: white;
+}
+
+.website-layout {
+    background-color: aliceblue;
+    border: 3px dashed lightblue;
+    padding: 15px;
+}
+
+.logo-module {
+    background-color: white;
+    border: 3px dotted pink;
+}
+
+.query-module {
+    background-color: rgba(155,255,155, 0.3);
+    border: 3px dashed lightgreen;
+}
+
+.categories-module {
+    background-color: rgba(155,155,255, 0.2);
+    border: 3px dashed cornflowerblue;
+}
+
+.settings-module{
+    background-color: lightgoldenrodyellow;
+    border: 2px dashed yellowgreen;
+}
