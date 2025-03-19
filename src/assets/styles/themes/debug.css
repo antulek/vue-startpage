@@ -24,6 +24,15 @@ body {
 }
 
 .settings-module{
-    background-color: lightgoldenrodyellow;
+    * {
+        background-color: lightgoldenrodyellow;
+    }
     border: 2px dashed yellowgreen;
+}
+
+.website-layout-grid {
+    grid-template-areas:
+    "logo query"
+    "logo categories"
+    "logo settings";
 }
