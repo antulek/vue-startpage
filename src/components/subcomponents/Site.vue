@@ -1,3 +1,8 @@
+<script setup>
+import {useSearchStore} from "../../stores/searchStore.js";
+
+const searchStore = useSearchStore();
+</script>
 <script>
 export default {
   props: {
@@ -11,7 +16,7 @@ export default {
 </script>
 <template>
   <div class="site">
-    <div class="site-header">
+    <div class="site-header" @click="searchStore.search(searchStore.data.query, site.search_address)">
       <div class="site-header-icon">
         {{ site.icon }}
       </div>

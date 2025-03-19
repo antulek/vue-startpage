@@ -9,7 +9,6 @@ import '../src/assets/styles/main.css';
 // compnents imports
 import Website from "./components/Website.vue";
 import { useDataStore } from './stores/dataStore.js';
-import {onMounted} from "vue";
 
 const dataStore = useDataStore();
 
@@ -17,7 +16,7 @@ const dataStore = useDataStore();
 
 <template>
   <head>
-    <link id="theme" rel="stylesheet" :href="'./src/assets/styles/themes/'+dataStore.settings.themes.currentTheme+'.css'" />
+    <link id="theme" rel="stylesheet" :href="'./src/assets/styles/themes/'+dataStore.data.settings.themes.currentTheme+'.css'" />
   </head>
 
   <Website :data-store="dataStore">

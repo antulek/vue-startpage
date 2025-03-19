@@ -61,6 +61,12 @@ modules interaction with data:
 3 - addding/editing site/category
 4 - importing exporting sites
 4 + x - importing/exporting data from different modules
+types of actions:
+1 - internal - ex.typing query + cliking search. All data needed to [redirect user/take action] is
+    'at site' in same module and can be send via event arguments
+2 - between modules - ex. typing query and clicking website, searches term on this website only.
+    For this action searched term from queryModule is needed and also what site button was clicked
+
 
 
 roadblocks

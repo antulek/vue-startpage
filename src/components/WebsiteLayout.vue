@@ -66,7 +66,7 @@ export default {
 <template>
   <div class="website-layout website-layout-grid">
     <WebsiteSection container-name="logo">
-      <LogoModule v-bind="dataStore.logo">
+      <LogoModule v-bind="dataStore.data.logo">
         L.O.G.O
       </LogoModule>
     </WebsiteSection>
@@ -74,13 +74,13 @@ export default {
       <QueryModule></QueryModule>
     </WebsiteSection>
     <WebsiteSection container-name="categories">
-      <CategoriesModule :categories="dataStore.categories">
+      <CategoriesModule :categories="dataStore.data.categories">
 
       </CategoriesModule>
     </WebsiteSection>
     <WebsiteSection container-name="settings">
       <div class="footer">
-        <SettingsModule :settings-data="dataStore.settings"></SettingsModule>
+        <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>
       </div>
     </WebsiteSection>
   </div>
