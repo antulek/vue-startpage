@@ -29,10 +29,3 @@ body {
     }
     border: 2px dashed yellowgreen;
 }
-
-.website-layout-grid {
-    grid-template-areas:
-    "logo query"
-    "logo categories"
-    "logo settings";
-}

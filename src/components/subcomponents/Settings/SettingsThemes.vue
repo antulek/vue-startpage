@@ -14,6 +14,11 @@ import {useDataStore} from "../../../stores/dataStore.js";
         required: false,
       }
     },
+    computed: {
+      dropStyle(){
+        return (this.isDropUp ? {bottom: '100%'} : {top: '100%'})
+      }
+    },
     data() {
       return {
         dataStore: useDataStore(), // ✅ Store instance in `data()`
@@ -32,7 +37,7 @@ import {useDataStore} from "../../../stores/dataStore.js";
     <div class="settings-item-header">
       Themes ({{themesData.currentTheme}})
     </div>
-    <div class="settings-item-actions" :class="{dropup: isDropUp, dropdown: !isDropUp}">
+    <div class="settings-item-actions" :style="dropStyle">
       <template v-if="themesData && themesData.themesList" >
         <div v-for="themeName in themesData.themesList" class="settings-action"
           @click="theme(themeName)">
@@ -47,7 +52,3 @@ import {useDataStore} from "../../../stores/dataStore.js";
     </div>
   </div>
 </template>
-<style scoped>
-  /* don't add any rules here! Please use imported file instead! */
-  @import "@/assets/styles/settings.css";
-</style>

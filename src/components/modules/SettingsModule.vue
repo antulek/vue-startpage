@@ -33,7 +33,3 @@ import SettingsThemes from "../subcomponents/Settings/SettingsThemes.vue";
     </div>
   </div>
 </template>
-<style scoped>
-  /* don't add any rules here! Please use imported file instead! */
-  @import "@/assets/styles/settings.css";
-</style>

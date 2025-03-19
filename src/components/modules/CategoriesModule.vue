@@ -24,10 +24,3 @@ export default {
     </div>
   </Module>
 </template>
-<style scoped>
-  .categories-module {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-  }
-</style>

@@ -85,29 +85,3 @@ export default {
     </WebsiteSection>
   </div>
 </template>
-<style scoped>
-.footer {
-  display: flex;
-  flex-direction: column-reverse;
-  width: 100%;
-}
-
-.website-layout {
-  min-width: 100vw;
-  min-height: 100vh;
-}
-
-.website-layout-grid {
-  display: grid;
-  grid-template-columns: v-bind(gridTemplateColumnsStyle);
-//grid-template-columns: auto; grid-template-rows: auto;
-  grid-template-areas:
-    "logo"
-    "query"
-    "categories"
-    "settings";
-  column-gap: v-bind(columnGap);
-  row-gap: v-bind(rowGap);
-}
-
-</style>

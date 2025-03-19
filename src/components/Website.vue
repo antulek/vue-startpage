@@ -31,6 +31,3 @@ export default defineComponent({
     </WebsiteLayout>
   </div>
 </template>
-<style scoped>
-
-</style>

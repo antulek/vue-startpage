@@ -60,12 +60,10 @@ export default {
   </Module>
 </template>
 <style scoped>
-  .logo-module {
-    height: 100%;
-    background-image: v-bind(backgroundImageCss);
-    background-size: v-bind(scaleCSS);
-    background-repeat: v-bind(repeatCSS);
-    background-position: 50% 50%;
-    image-rendering: v-bind(isPixelArtCSS);
-  }
+.logo-module {
+  background-image: v-bind(backgroundImageCss);
+  background-size: v-bind(scaleCSS);
+  background-repeat: v-bind(repeatCSS);
+  image-rendering: v-bind(isPixelArtCSS);
+}
 </style>

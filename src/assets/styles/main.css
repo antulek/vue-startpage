@@ -1,0 +1,134 @@
+/**
+    MAIN.CSS - stylesheet
+    -place there css rules needed for site to keep their very basic structure, visual styling
+    -create classes with unique names for each component
+    -keep rules sorted by component file it styles
+ */
+
+/*
+Website parts components START
+ */
+
+/* WebsiteLayout.vue START */
+.footer {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+}
+
+.website-layout {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.website-layout-grid {
+    display: grid;
+    grid-template-columns: v-bind(gridTemplateColumnsStyle);
+//grid-template-columns: auto; grid-template-rows: auto;
+    grid-template-areas:
+    "logo"
+    "query"
+    "categories"
+    "settings";
+    column-gap: v-bind(columnGap);
+    row-gap: v-bind(rowGap);
+}
+/* WebsiteLayout.vue END */
+
+/* WebsiteSection.vue START */
+.section {
+    width: 100%;
+    height: 100%;
+}
+
+.section-grid{
+    display: flex;
+    grid-area: v-bind(containerName);
+}
+/* WebsiteSection.vue END */
+
+/*
+Website parts components END
+ */
+
+/*
+Modules styles START
+ */
+
+/* LogoModule.vue START */
+.logo-module {
+    height: 100%;
+    background-position: 50% 50%;
+}
+/* LogoModule.vue END */
+
+/* QueryModule.vue START */
+.query-module{
+    width: 100%;
+    height: 100%;
+}
+
+.query-module-input{
+    padding: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+
+.query-module-input input{
+    width: 80%;
+}
+
+.query-module-input button{
+    width: 10%;
+}
+/* QueryModule.vue END */
+
+/* CategoriesModule.vue START */
+.categories-module {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+/* CategoriesModule.vue END */
+
+/* SettingsModule.vue START */
+
+.settings-module {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.settings-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.settings-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.settings-item-actions{
+    display: none;
+    position: absolute;
+//bottom: 100%;
+    width: 100%;
+}
+
+.settings-item-header:hover + .settings-item-actions{
+    display: block;
+}
+
+.settings-item-actions:hover{
+    display: block;
+}
+/* SettingsModule.vue END */
+
+/*
+Modules styles END
+ */

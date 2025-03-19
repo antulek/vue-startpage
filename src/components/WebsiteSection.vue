@@ -25,15 +25,3 @@ export default {
     </slot>
   </div>
 </template>
-<style scoped>
-  .section {
-    width: 100%;
-    height: 100%;
-  }
-
-  .section-grid{
-    display: flex;
-    grid-area: v-bind(containerName);
-  }
-
-</style>

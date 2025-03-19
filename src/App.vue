@@ -25,7 +25,3 @@ const dataStore = useDataStore();
   </Website>
 
 </template>
-
-<style scoped>
-
-</style>
