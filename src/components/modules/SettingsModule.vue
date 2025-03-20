@@ -27,6 +27,7 @@ import SettingsThemes from "../subcomponents/Settings/SettingsThemes.vue";
 <template>
   <div class="settings-module">
     <div class="settings-header">
+
       <SettingsThemes :themes-data="settingsData.themes" :is-drop-up="isDropUp">
 
       </SettingsThemes>

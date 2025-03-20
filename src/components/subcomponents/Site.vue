@@ -11,12 +11,20 @@ export default {
       default: null,
       required: true
     }
+  },
+  methods: {
+    alert(message){ alert(message); }
   }
 }
 </script>
 <template>
-  <div class="site">
-    <div class="site-header" @click="searchStore.search(searchStore.data.query, site.search_address)">
+  <div class="site"
+       @click.exact="searchStore.search(searchStore.data.query, site)"
+       @click.alt.exact="searchStore.search(searchStore.data.query, site)"
+       @click.ctrl.exact="searchStore.search(searchStore.data.query, site, false, true)"
+       @click.alt.ctrl.exact="searchStore.search(searchStore.data.query, site, true, true)"
+  >
+    <div class="site-header">
       <div class="site-header-icon">
         {{ site.icon }}
       </div>

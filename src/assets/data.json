@@ -8,28 +8,24 @@
         {
           "name": "BBC",
           "address": "https://www.bbc.com",
-          "search_address": "https://www.bbc.com/search?q=",
           "icon": "🌍",
           "color": "#005BBC"
         },
         {
           "name": "CNN",
           "address": "https://www.cnn.com",
-          "search_address": "https://www.cnn.com/search?q=",
           "icon": "📺",
           "color": "#CC0000"
         },
         {
           "name": "The Guardian",
           "address": "https://www.theguardian.com",
-          "search_address": "https://www.theguardian.com/search?q=",
           "icon": "📰",
           "color": "#052962"
         },
         {
           "name": "NY Times",
           "address": "https://www.nytimes.com",
-          "search_address": "https://www.nytimes.com/search?query=",
           "icon": "🗞️",
           "color": "#000000"
         }

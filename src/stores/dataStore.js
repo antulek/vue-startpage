@@ -10,7 +10,7 @@ export const useDataStore = defineStore('dataStore',{
    },
    actions: {
       setTheme(name){
-         this.settings.themes.currentTheme = name;
+         this.data.settings.themes.currentTheme = name;
          console.log("Setting theme to:"+name);
       }
    }
