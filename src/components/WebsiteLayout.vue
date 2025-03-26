@@ -65,6 +65,7 @@ export default {
 </script>
 <template>
   <div class="website-layout website-layout-grid">
+
     <WebsiteSection container-name="logo">
       <LogoModule v-bind="dataStore.data.logo">
         L.O.G.O
@@ -77,6 +78,15 @@ export default {
       <CategoriesModule :categories="dataStore.data.categories">
 
       </CategoriesModule>
+    </WebsiteSection>
+    <WebsiteSection container-name="lorem">
+      <Module>
+        <span v-for="l in [0,1,2,3,4,5,6,7,8,9,0]">
+          <span v-for="lorem in [0,1,2,3,4,5,6,7,8,9,0]">
+            Lorem ipsum
+          </span>
+        </span>
+      </Module>
     </WebsiteSection>
     <WebsiteSection container-name="settings">
       <div class="footer">

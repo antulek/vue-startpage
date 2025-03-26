@@ -29,3 +29,7 @@ body {
     }
     border: 2px dashed yellowgreen;
 }
+
+.category {
+    border: 1px red solid;
+}

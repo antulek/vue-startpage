@@ -16,9 +16,3 @@
     <slot></slot>
   </div>
 </template>
-<style scoped>
-  .module {
-    flex: 1;
-  }
-
-</style>

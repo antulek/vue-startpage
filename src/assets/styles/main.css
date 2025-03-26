@@ -18,17 +18,19 @@ Website parts components START
 
 .website-layout {
     min-width: 100vw;
-    min-height: 100vh;
+    min-height: 100svh;
 }
 
 .website-layout-grid {
     display: grid;
-    grid-template-columns: v-bind(gridTemplateColumnsStyle);
-//grid-template-columns: auto; grid-template-rows: auto;
+    /* grid-template-columns: v-bind(gridTemplateColumnsStyle); */
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     grid-template-areas:
     "logo"
     "query"
     "categories"
+    "lorem"
     "settings";
     column-gap: v-bind(columnGap);
     row-gap: v-bind(rowGap);
@@ -43,12 +45,21 @@ Website parts components START
 
 .section-grid{
     display: flex;
-    grid-area: v-bind(containerName);
 }
 /* WebsiteSection.vue END */
 
 /*
 Website parts components END
+ */
+
+/*
+Global module style START
+ */
+.module {
+    flex: 1;
+}
+/*
+Global module style END
  */
 
 /*
@@ -69,18 +80,23 @@ Modules styles START
 }
 
 .query-module-input{
+    width: 100%;
+
     padding: 10px;
     top: 50%;
     transform: translateY(-50%);
     position: relative;
+
+    display: flex;
+    flex-direction: row;
 }
 
 .query-module-input input{
-    width: 80%;
+    flex-grow: 1;
 }
 
 .query-module-input button{
-    width: 10%;
+
 }
 /* QueryModule.vue END */
 
@@ -88,7 +104,15 @@ Modules styles START
 .categories-module {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
     height: 100%;
+}
+
+.category {
+    min-width: 50%;
+    flex-basis: 50%;
+    justify-content: space-around;
 }
 /* CategoriesModule.vue END */
 
