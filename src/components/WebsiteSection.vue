@@ -25,12 +25,6 @@ export default {
     </slot>
   </div>
 </template>
-<style>
-  .section-grid{
-    display: flex;
-    grid-area: v-bind(containerName);
-  }
-</style>
 <style scoped>
   .section-grid {
     grid-area: v-bind(containerName);

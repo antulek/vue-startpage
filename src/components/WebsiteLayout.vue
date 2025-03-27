@@ -64,34 +64,37 @@ export default {
 }
 </script>
 <template>
-  <div class="website-layout website-layout-grid">
+  <div class="website-layout">
+    <div class="website-header">
+    </div>
+    <div class="website-layout-grid">
+      <WebsiteSection container-name="logo">
+        <LogoModule v-bind="dataStore.data.logo">
+          L.O.G.O
+        </LogoModule>
+      </WebsiteSection>
+      <WebsiteSection container-name="query">
+        <QueryModule></QueryModule>
+      </WebsiteSection>
+      <WebsiteSection container-name="categories">
+        <CategoriesModule :categories="dataStore.data.categories">
 
-    <WebsiteSection container-name="logo">
-      <LogoModule v-bind="dataStore.data.logo">
-        L.O.G.O
-      </LogoModule>
-    </WebsiteSection>
-    <WebsiteSection container-name="query">
-      <QueryModule></QueryModule>
-    </WebsiteSection>
-    <WebsiteSection container-name="categories">
-      <CategoriesModule :categories="dataStore.data.categories">
-
-      </CategoriesModule>
-    </WebsiteSection>
-    <WebsiteSection container-name="lorem">
-      <Module>
-        <span v-for="l in [0,1,2,3,4,5,6,7,8,9,0]">
-          <span v-for="lorem in [0,1,2,3,4,5,6,7,8,9,0]">
-            Lorem ipsum
+        </CategoriesModule>
+      </WebsiteSection>
+      <WebsiteSection container-name="lorem">
+        <div>
+          <span v-for="lorem in [0,1,2,3,4,5,6,7,8,9]">
+            <span v-for="lorem in [0,1,2,3,4,5,6,7,8,9]">
+              LOREM IPSUM
+            </span>
           </span>
-        </span>
-      </Module>
-    </WebsiteSection>
-    <WebsiteSection container-name="settings">
-      <div class="footer">
-        <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>
-      </div>
-    </WebsiteSection>
+        </div>
+      </WebsiteSection>
+    </div>
+    <div class="website-footer">
+      <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>
+    </div>
   </div>
 </template>
+<style scoped>
+</style>

@@ -8,6 +8,10 @@ body {
     padding: 15px;
 }
 
+.website-layout-grid {
+    background-color: lightsteelblue;
+}
+
 .logo-module {
     background-color: white;
     border: 3px dotted pink;

@@ -1,3 +1,4 @@
+@import "main-mobile.css";
 /**
     MAIN.CSS - stylesheet
     -place there css rules needed for site to keep their very basic structure, visual styling
@@ -10,30 +11,32 @@ Website parts components START
  */
 
 /* WebsiteLayout.vue START */
-.footer {
-    display: flex;
-    flex-direction: column-reverse;
-    width: 100%;
-}
-
 .website-layout {
     min-width: 100vw;
     min-height: 100svh;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .website-layout-grid {
-    display: grid;
-    /* grid-template-columns: v-bind(gridTemplateColumnsStyle); */
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas:
-    "logo"
-    "query"
-    "categories"
-    "lorem"
-    "settings";
-    column-gap: v-bind(columnGap);
-    row-gap: v-bind(rowGap);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .website-layout-grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "query logo"
+            "categories categories "
+            "lorem lorem";
+    }
 }
 /* WebsiteLayout.vue END */
 
@@ -45,6 +48,7 @@ Website parts components START
 
 .section-grid{
     display: flex;
+    flex-grow: 1;
 }
 /* WebsiteSection.vue END */
 
@@ -151,6 +155,16 @@ Modules styles START
     display: block;
 }
 /* SettingsModule.vue END */
+
+.website-footer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.website-header {
+    display: flex;
+    flex-direction: column;
+}
 
 /*
 Modules styles END
