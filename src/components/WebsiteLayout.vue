@@ -81,15 +81,6 @@ export default {
 
         </CategoriesModule>
       </WebsiteSection>
-      <WebsiteSection container-name="lorem">
-        <div>
-          <span v-for="lorem in [0,1,2,3,4,5,6,7,8,9]">
-            <span v-for="lorem in [0,1,2,3,4,5,6,7,8,9]">
-              LOREM IPSUM
-            </span>
-          </span>
-        </div>
-      </WebsiteSection>
     </div>
     <div class="website-footer">
       <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>

@@ -30,12 +30,12 @@ Website parts components START
 @media (min-width: 768px) {
     .website-layout-grid {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         grid-template-rows: auto;
         grid-template-areas:
-            "query logo"
-            "categories categories "
-            "lorem lorem";
+            "logo"
+            "query"
+            "categories";
     }
 }
 /* WebsiteLayout.vue END */

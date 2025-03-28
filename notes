@@ -24,15 +24,26 @@ style hierarchy:
 fun features
 -typing part of site name to show only those that fit query - {https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fzmx3rlyqyqfa1.gif}
 
+roadblocks
+[x]communications, common event bus between all components
+!-how to enable/disable modules
+!--project fails on loading empty data
+-how much you can fetch and embed into site from external sites (xkcd comic)
+-how to order modules on mobile and desktop
+
+
 todo
 [x]create a rough layout
 [x]-make it mobile friendly
 [x]-split elements of site into separate components
 [x]-modules extends main module component
 [x]communications, common event bus between all components
+[!!!]see roadblocks
 -check if data structure is good enough
 -importing/exporting data
+[x]-import/export buttons
 --to local storage
+---should we bind localStorage with dataStore.data reactively?
 --place to paste text
 --file import/upload
 ---debug oprion of N pre-defined files
@@ -73,13 +84,6 @@ types of actions:
 2 - between modules - ex. typing query and clicking website, searches term on this website only.
     For this action searched term from queryModule is needed and also what site button was clicked
 
-
-
-roadblocks
--communications, common event bus between all components
--how much you can fetch and embed into site from external sites (xkcd comic)
--how to enable/disable modules
--how to order modules on mobile and desktop
 
 parts of UI:
 -logo - image that obstructs big part of site

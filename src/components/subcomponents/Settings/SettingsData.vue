@@ -1,4 +1,10 @@
+<script setup>
+import { useDataStore } from '../../../stores/dataStore.js';
+
+const dataStore = useDataStore();
+</script>
 <script>
+
 export default {
   props: {
     isDropUp: {
@@ -14,7 +20,7 @@ export default {
   },
   data(){
     return{
-      storageOptions: ['local storage', 'file', 'clipboard'],
+      storageOptions: ['local storage', 'file', 'json'],
       actionsOptions: ['import', 'export']
     }
   },
@@ -37,8 +43,13 @@ export default {
           {{action}}
         </div>
         <div class="settings-action" v-for="storage in storageOptions"
-          @click="data(action, storage)">
+          @click="dataStore.dataTransfer(action, storage)">
           {{storage}}
+        </div>
+      </div>
+      <div class="settings-item-category">
+        <div class="settings-action" @click="dataStore.dataTransfer('import', 'fixed')">
+          Import fixed template
         </div>
       </div>
     </div>

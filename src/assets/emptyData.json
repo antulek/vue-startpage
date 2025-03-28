@@ -1,0 +1,12 @@
+{
+  "categories": [],
+  "logo": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/640px-Wikipedia-logo-v2.svg.png"
+  },
+  "settings": {
+    "themes": {
+      "themesList": ["debug","default", "kawaii"],
+      "currentTheme": "debug"
+    }
+  }
+}
