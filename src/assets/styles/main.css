@@ -141,19 +141,38 @@ Modules styles START
     position: relative;
 }
 
-.settings-item-actions{
+.settings-item-body{
     display: none;
     position: absolute;
     width: 100%;
 }
 
-.settings-item-header:hover + .settings-item-actions{
+.settings-item-header:hover + .settings-item-body{
+    display: flex;
+}
+
+.settings-item-body:hover {
     display: block;
 }
 
-.settings-item-actions:hover{
-    display: block;
+.settings-item-body {
+    display: none;
+    flex-direction: column;
 }
+
+.settings-item-category {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-category-header {
+    flex-grow: 1;
+}
+
+.settings-action {
+    flex-grow: 1;
+}
+
 /* SettingsModule.vue END */
 
 .website-footer {

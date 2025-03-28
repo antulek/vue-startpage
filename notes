@@ -30,6 +30,12 @@ todo
 [x]-split elements of site into separate components
 [x]-modules extends main module component
 [x]communications, common event bus between all components
+-check if data structure is good enough
+-importing/exporting data
+--to local storage
+--place to paste text
+--file import/upload
+---debug oprion of N pre-defined files
 
 Core element and data flow between them
 1)query area
@@ -55,8 +61,8 @@ categories:
 ---subsites[]
 
 modules interaction with data:
-1 - pressing search/lucky button when query was typed
-1+2 - pressing site button when query was typed
+[x] 1 - pressing search/lucky button when query was typed
+[x] 1+2 - pressing site button when query was typed
 2 - changing order of sites/categories, moving site to different category
 3 - addding/editing site/category
 4 - importing exporting sites

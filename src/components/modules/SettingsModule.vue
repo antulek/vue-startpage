@@ -1,5 +1,6 @@
 <script>
 import SettingsThemes from "../subcomponents/Settings/SettingsThemes.vue";
+import SettingsData from "../subcomponents/Settings/SettingsData.vue"
 
   export default {
     props: {
@@ -16,6 +17,7 @@ import SettingsThemes from "../subcomponents/Settings/SettingsThemes.vue";
     },
     components: {
       SettingsThemes,
+      SettingsData,
     },
     data() {
       return {
@@ -27,10 +29,12 @@ import SettingsThemes from "../subcomponents/Settings/SettingsThemes.vue";
 <template>
   <div class="settings-module">
     <div class="settings-header">
-
       <SettingsThemes :themes-data="settingsData.themes" :is-drop-up="isDropUp">
 
       </SettingsThemes>
+      <SettingsData :is-drop-up="isDropUp">
+
+      </SettingsData>
     </div>
   </div>
 </template>

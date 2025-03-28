@@ -37,9 +37,10 @@ import {useDataStore} from "../../../stores/dataStore.js";
     <div class="settings-item-header">
       Themes ({{themesData.currentTheme}})
     </div>
-    <div class="settings-item-actions" :style="dropStyle">
+    <div class="settings-item-body" :style="dropStyle">
       <template v-if="themesData && themesData.themesList" >
-        <div v-for="themeName in themesData.themesList" class="settings-action"
+        <div v-for="themeName in themesData.themesList"
+           class="settings-action"
           @click="theme(themeName)">
           {{themeName}}
         </div>
