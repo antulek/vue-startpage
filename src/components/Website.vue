@@ -25,9 +25,7 @@ export default defineComponent({
 })
 </script>
 <template>
-  <div>
-    <WebsiteLayout :data-store="dataStore" :columns="columns" :modules="modules">
+  <WebsiteLayout :data-store="dataStore" :columns="columns" :modules="modules">
 
-    </WebsiteLayout>
-  </div>
+  </WebsiteLayout>
 </template>
