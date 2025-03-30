@@ -82,10 +82,10 @@ export default {
         </CategoriesModule>
       </WebsiteSection>
     </div>
+
     <div class="website-footer">
       <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>
     </div>
   </div>
 </template>
-<style scoped>
-</style>
+

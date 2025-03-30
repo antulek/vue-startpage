@@ -49,11 +49,10 @@ BODY styles END
     .website-layout-grid {
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: auto;
+        grid-template-rows: min-content;
         grid-template-areas:
-            "logo"
-            "query"
-            "categories";
+            "logo query"
+            "logo categories";
     }
 }
 /* WebsiteLayout.vue END */
@@ -64,8 +63,7 @@ BODY styles END
 }
 
 .section-grid{
-    display: flex;
-    flex-grow: 1;
+
 }
 /* WebsiteSection.vue END */
 
@@ -100,13 +98,7 @@ Modules styles START
     height: 100%;
 }
 
-.query-module-input{
-    width: 100%;
-
-    top: 50%;
-    transform: translateY(-50%);
-    position: relative;
-
+.query-module-input {
     display: flex;
     flex-direction: row;
 }
@@ -204,3 +196,23 @@ Modules styles START
 /*
 Modules styles END
  */
+
+
+/* Make sections span 100% of height and width START */
+.section-grid {
+    display: flex;
+    flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+    .website-layout-grid {
+        grid-template-rows: auto;
+    }
+}
+
+.query-module-input {
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+/* Make sections span 100% of height and width END */

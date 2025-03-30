@@ -15,6 +15,9 @@ body {
 .logo-module {
     background-color: white;
     border: 3px dotted pink;
+
+    min-width: 350px;
+    min-height: 200px;
 }
 
 .query-module {
