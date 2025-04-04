@@ -19,6 +19,9 @@ const schemaStore = useSchemaStore();
     <link id="theme" rel="stylesheet" :href="themeStore.getCurrentTheme" />
   </head>
   <button @click="schemaStore.validateApplicationData()">VALIDATE</button>
+  <button @click="schemaStore.validateModuleData()">VALIDATE Settings</button>
+  <button @click="schemaStore.validateModuleData('logo')">VALIDATE logo</button>
+  <button @click="schemaStore.validateModuleData('logo', true)">VALIDATE logo</button>
 
   <Website :data-store="dataStore">
 

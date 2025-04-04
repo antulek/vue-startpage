@@ -5,8 +5,8 @@
   },
   "settings": {
     "themes": {
-      "themesList": ["debug","default", "kawaii", 1],
-      "currentTheme": 123
+      "themesList": ["debug","default", "kawaii"],
+      "currentTheme": "debug"
     }
   }
 }
