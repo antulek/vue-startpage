@@ -42,7 +42,10 @@ export const useSchemaStore = defineStore('schema', {
             }
 
             try {
-                const result = await this.schema.fields[module].cast(dataStore.data[module]);
+                const result = await this.schema.fields[module].validate(dataStore.data[module], {
+                    strict: true,
+                    abortEarly: false,
+                });
                 console.log(result);
                 return result;
             } catch (error) {
