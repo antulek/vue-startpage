@@ -54,6 +54,17 @@ Core element and data flow between them
 3)category/site form
 4)import/export
 
+Data needed for Application:
+! can all app data be only stored in modules?
+!-modules enabling/disabling?
+!-prevent app crashing on wrong data structure?
+!-who is meant to launch schema errros an where?
+!--where to show them?
+-layout of page sections - specify webisteLayout and feed data into it
+-categories/sites data - feed into categories module
+-current style - feed into settings->themes module
+-colorscheme - feed into themes module
+
 Data schema for modules:
 themes:
 -themeList[]
