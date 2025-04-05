@@ -3,22 +3,25 @@ import {useOverlayStore} from "../../stores/overlayStore.js";
 const overlayStore = useOverlayStore();
 </script>
 <script>
+import Overlay from "./Overlay.vue";
+
 export default {
-  date() {
-    return {
+  extends: Overlay,
+  components: {
+    Overlay
+  },
+  data(){
+    return{
 
     }
   },
   methods: {
 
-  },
-  props: {
-
   }
 }
 </script>
 <template>
-  <div class="overlay">
+  <div class="dimming-overlay">
     <div class="overlay-footer">
       <div style="background-color: red" @click="overlayStore.hide()">
         DIASBLE

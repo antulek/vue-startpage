@@ -44,3 +44,23 @@ body {
 .category {
     border: 1px red solid;
 }
+
+
+
+/* data text editor style START */
+.data-text-editor {
+    background-color: white;
+}
+
+.data-text-editor-header {
+    background-color: yellow;
+}
+
+.data-text-editor-body {
+    background-color: palevioletred;
+}
+
+.data-text-editor-footer {
+    background-color: green;
+}
+/* data text editor style END */

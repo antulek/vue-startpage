@@ -54,7 +54,7 @@ export default {
         <div class="settings-category-header">
           JSON
         </div>
-        <div class="settings-action">
+        <div class="settings-action" @click="overlayStore.show('dimmingOverlay')">
           Copy to clipboard
         </div>
         <div class="settings-action" @click="overlayStore.show('overlay')">

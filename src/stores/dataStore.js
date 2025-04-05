@@ -4,12 +4,22 @@ import exampleData from "../assets/exampleData.json"
 import {useOverlayStore} from "./overlayStore.js";
 
 export const useDataStore = defineStore('dataStore',{
-   state: () => ({
-      currentLocalStorageKey: 'applicationData',
-      data: {...JSON.parse( localStorage.getItem('applicationData' ))},
-   }),
-   getters: {
+   state: () => {
+      const key = 'applicationData';
+      const local = localStorage.getItem(key);
 
+      let parsedData;
+      try {
+         parsedData = local ? JSON.parse(local) : null;
+      } catch (e) {
+         parsedData = null;
+         console.warn('Invalid JSON in localStorage:', e);
+      }
+
+      return {
+         currentLocalStorageKey: key,
+         data: parsedData || exampleData
+      };
    },
    actions: {
       /* Local Storage START */
