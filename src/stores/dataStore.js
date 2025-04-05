@@ -4,7 +4,7 @@ import exampleData from "../assets/exampleData.json"
 
 export const useDataStore = defineStore('dataStore',{
    state: () => ({
-      data: emptyData
+      data: exampleData
    }),
    getters: {
 

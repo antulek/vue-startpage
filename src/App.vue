@@ -7,21 +7,15 @@ import '../src/assets/styles/main.css';
 import Website from "./components/Website.vue";
 import { useDataStore } from './stores/dataStore.js';
 import { useThemeStore } from './stores/modules/themeStore.js';
-import { useSchemaStore } from './stores/schemaStore.js';
 
 const dataStore = useDataStore();
 const themeStore = useThemeStore();
-const schemaStore = useSchemaStore();
 </script>
 
 <template>
   <head>
     <link id="theme" rel="stylesheet" :href="themeStore.getCurrentTheme" />
   </head>
-  <button @click="schemaStore.validateApplicationData()">VALIDATE</button>
-  <button @click="schemaStore.validateModuleData()">VALIDATE Settings</button>
-  <button @click="schemaStore.validateModuleData('logo')">VALIDATE logo</button>
-  <button @click="schemaStore.validateModuleData('logo', true)">VALIDATE logo</button>
 
   <Website :data-store="dataStore">
 
