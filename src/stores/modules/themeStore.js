@@ -2,17 +2,18 @@ import { defineStore } from "pinia";
 import { useDataStore } from "../dataStore.js"
 
 export const useThemeStore = defineStore('themeStore', {
-    state: () => {
-        const dataStore = useDataStore();
-        return {
-            data: dataStore.data?.settings?.themes || null
-        }
-    },
     getters: {
+        getThemeStoreData(){
+            const dataStore = useDataStore();
+            return dataStore.data?.settings?.themes;
+        },
         getCurrentTheme(){
+            const dataStore = useDataStore();
             let theme = 'debug';
-            if(this.data && this.data.currentTheme && this.data.currentTheme.length)
-                theme = this.data.currentTheme
+            if(dataStore?.data?.settings?.themes?.currentTheme && dataStore.data.settings.themes.currentTheme.length){
+                theme = dataStore.data.settings.themes.currentTheme
+            }
+
             return './src/assets/styles/themes/'+theme+'.css';
         }
     },

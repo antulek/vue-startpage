@@ -4,18 +4,31 @@ import exampleData from "../assets/exampleData.json"
 
 export const useDataStore = defineStore('dataStore',{
    state: () => ({
-      data: exampleData
+      currentLocalStorageKey: 'applicationData',
+      data: {...JSON.parse( localStorage.getItem('applicationData' ))},
    }),
    getters: {
 
    },
    actions: {
-      importFixed(){
-         this.data = exampleData;
+      /* Local Storage START */
+      loadFromLocalStorage(localStorageKey = null){
+         if(localStorageKey === null){
+            localStorageKey = this.currentLocalStorageKey;
+         }
+         this.data = {...JSON.parse( localStorage.getItem( localStorageKey ))}
       },
+      saveToLocalStorage(data = null){
+         if(data === null){
+            data = this.data
+         }
+
+         localStorage.setItem(this.currentLocalStorageKey, JSON.stringify(data));
+      },
+      /* Local Storage END */
       dataTransfer(action, storage){
          let allowedActions = ['import', 'export'];
-         let allowedStorage = ['local storage', 'file', 'json', 'fixed'];
+         let allowedStorage = ['file', 'json', 'fixed-default', 'fixed-empty'];
          if(!allowedActions.includes(action)){
             console.error("Specified action: "+action+" was not specified in allowed actions "+JSON.stringify(allowedActions))
             return null;
@@ -27,8 +40,11 @@ export const useDataStore = defineStore('dataStore',{
          }
 
          switch ((action+'-'+storage)){
-            case 'import-fixed':
-               this.importFixed();
+            case 'import-fixed-default':
+               this.data = {...exampleData};
+               break;
+            case 'import-fixed-empty':
+               this.data = {...emptyData};
                break;
             default:
                console.error("Unknown! action:"+action+" storage:"+storage);

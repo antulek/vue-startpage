@@ -34,9 +34,55 @@ export default {
 <template>
   <div class="settings-item">
     <div class="settings-item-header">
-      Themes
+      Data
     </div>
     <div class="settings-item-body" :style="dropStyle">
+      <div class="settings-item-category" >
+        <div class="settings-category-header">
+          File
+        </div>
+        <div class="settings-action">
+          Export
+        </div>
+        <div class="settings-action">
+          Import
+        </div>
+      </div>
+      <div class="settings-item-category" >
+        <div class="settings-category-header">
+          JSON
+        </div>
+        <div class="settings-action">
+          Copy to clipboard
+        </div>
+        <div class="settings-action">
+          Edit
+        </div>
+      </div>
+      <div class="settings-item-category" >
+        <div class="settings-category-header">
+          Changes
+        </div>
+        <div class="settings-action" @click="dataStore.saveToLocalStorage()">
+          Save
+        </div>
+        <div class="settings-action" @click="dataStore.loadFromLocalStorage()">
+          Discard
+        </div>
+      </div>
+      <div class="settings-item-category" >
+        <div class="settings-category-header">
+          Debug file
+        </div>
+        <div class="settings-action" @click="dataStore.dataTransfer('import', 'fixed-default')">
+          Import Default
+        </div>
+        <div class="settings-action" @click="dataStore.dataTransfer('import', 'fixed-empty')">
+          Import Empty
+        </div>
+      </div>
+    </div>
+<!--    <div class="settings-item-body" :style="dropStyle">
       <div class="settings-item-category"
            v-for="action in actionsOptions">
         <div class="settings-category-header">
@@ -52,6 +98,6 @@ export default {
           Import fixed template
         </div>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>

@@ -37,6 +37,10 @@ body {
     border: 2px dashed yellowgreen;
 }
 
+.settings-action:hover {
+    background-color: darkorange;
+}
+
 .category {
     border: 1px red solid;
 }
