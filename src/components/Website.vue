@@ -1,11 +1,16 @@
 <script>
 
-import {defineComponent} from "vue";
+import {defineComponent, reactive} from "vue";
 import WebsiteLayout from "./WebsiteLayout.vue";
-import emitter from "../eventBus.js";
+import Overlay from "./overlays/Overlay.vue";
+
+import {useOverlayStore} from "../stores/overlayStore.js";
 
 export default defineComponent({
-  components: {WebsiteLayout},
+  components: {
+    WebsiteLayout,
+    Overlay
+  },
   props: {
     dataStore: {
       type: Object,
@@ -15,9 +20,24 @@ export default defineComponent({
   },
   data(){
     return {
-      columns: 1,
-      modules: 4,
+
     }
+  },
+  setup() {
+    // Use the store inside setup function
+    const overlayStore = useOverlayStore();
+
+    // Define componentMap inside setup
+    const componentMap = reactive({
+      overlay: Overlay,
+      // Add more overlays as needed
+    });
+
+    // Return everything that needs to be accessible in the template
+    return {
+      overlayStore,
+      componentMap
+    };
   },
   methods: {
 
@@ -28,4 +48,11 @@ export default defineComponent({
   <WebsiteLayout :data-store="dataStore" :columns="columns" :modules="modules">
 
   </WebsiteLayout>
+  <div v-if="overlayStore.activeOverlay" class="overlay-wrapper">
+    <component
+        :is="componentMap[overlayStore.activeOverlay]"
+        v-bind="overlayStore.overlayProps"
+        @close="overlayStore.hide"
+    />
+  </div>
 </template>

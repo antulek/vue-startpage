@@ -1,7 +1,9 @@
 <script setup>
 import { useDataStore } from '../../../stores/dataStore.js';
+import {useOverlayStore} from "../../../stores/overlayStore.js";
 
 const dataStore = useDataStore();
+const overlayStore = useOverlayStore();
 </script>
 <script>
 
@@ -55,7 +57,7 @@ export default {
         <div class="settings-action">
           Copy to clipboard
         </div>
-        <div class="settings-action">
+        <div class="settings-action" @click="overlayStore.show('overlay')">
           Edit
         </div>
       </div>

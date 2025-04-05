@@ -64,28 +64,30 @@ export default {
 }
 </script>
 <template>
-  <div class="website-layout">
-    <div class="website-header">
-    </div>
-    <div class="website-layout-grid">
-      <WebsiteSection container-name="logo">
-        <LogoModule v-bind="dataStore.data.logo">
-          L.O.G.O
-        </LogoModule>
-      </WebsiteSection>
-      <WebsiteSection container-name="query">
-        <QueryModule></QueryModule>
-      </WebsiteSection>
-      <WebsiteSection container-name="categories">
-        <CategoriesModule :categories="dataStore.data.categories">
+  <slot>
+    <div class="website-layout">
+      <div class="website-header">
+      </div>
+      <div class="website-layout-grid">
+        <WebsiteSection container-name="logo">
+          <LogoModule v-bind="dataStore.data.logo">
+            L.O.G.O
+          </LogoModule>
+        </WebsiteSection>
+        <WebsiteSection container-name="query">
+          <QueryModule></QueryModule>
+        </WebsiteSection>
+        <WebsiteSection container-name="categories">
+          <CategoriesModule :categories="dataStore.data.categories">
 
-        </CategoriesModule>
-      </WebsiteSection>
-    </div>
+          </CategoriesModule>
+        </WebsiteSection>
+      </div>
 
-    <div class="website-footer">
-      <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>
+      <div class="website-footer">
+        <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>
+      </div>
     </div>
-  </div>
+  </slot>
 </template>
 
