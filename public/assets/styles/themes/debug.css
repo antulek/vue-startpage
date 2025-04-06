@@ -1,0 +1,66 @@
+body {
+    background-color: white;
+}
+
+.website-layout {
+    background-color: aliceblue;
+    border: 3px dashed lightblue;
+
+}
+
+.website-layout-grid {
+    background-color: lightsteelblue;
+}
+
+.logo-module {
+    background-color: white;
+    border: 3px dotted pink;
+
+    min-width: 350px;
+    min-height: 200px;
+}
+
+.query-module {
+    background-color: rgba(155,255,155, 0.3);
+    border: 3px dashed lightgreen;
+}
+
+.categories-module {
+    background-color: rgba(155,155,255, 0.2);
+    border: 3px dashed cornflowerblue;
+}
+
+.settings-module{
+    * {
+        background-color: lightgoldenrodyellow;
+    }
+    border: 2px dashed yellowgreen;
+}
+
+.settings-action:hover {
+    background-color: darkorange;
+}
+
+.category {
+    border: 1px red solid;
+}
+
+
+
+/* data text editor style START */
+.data-text-editor {
+    background-color: white;
+}
+
+.data-text-editor-header {
+    background-color: yellow;
+}
+
+.data-text-editor-body {
+    background-color: palevioletred;
+}
+
+.data-text-editor-footer {
+    background-color: green;
+}
+/* data text editor style END */
