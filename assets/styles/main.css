@@ -1,0 +1,302 @@
+@import "main-mobile.css";
+/**
+    MAIN.CSS - stylesheet
+    -place there css rules needed for site to keep their very basic structure, visual styling
+    -create classes with unique names for each component
+    -keep rules sorted by component file it styles
+ */
+
+/*
+Website parts components START
+ */
+
+/*
+BODY styles START
+ */
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100svh;
+    width: 100%;
+}
+
+#app {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+/*
+BODY styles END
+ */
+
+/* WebsiteLayout.vue START */
+.website-layout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.website-layout-grid {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .website-layout-grid {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: min-content;
+        grid-template-areas:
+            "logo query"
+            "logo categories";
+    }
+}
+/* WebsiteLayout.vue END */
+
+/* WebsiteSection.vue START */
+.section {
+
+}
+
+.section-grid{
+
+}
+/* WebsiteSection.vue END */
+
+/*
+Website parts components END
+ */
+
+/*
+Global module style START
+ */
+.module {
+    flex: auto;
+}
+/*
+Global module style END
+ */
+
+/*
+Modules styles START
+ */
+
+/* LogoModule.vue START */
+.logo-module {
+    height: 100%;
+    background-position: 50% 50%;
+}
+/* LogoModule.vue END */
+
+/* QueryModule.vue START */
+.query-module{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.query-module-input {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.query-module-input input{
+    flex-grow: 1;
+}
+
+.query-module-input button{
+
+}
+/* QueryModule.vue END */
+
+/* CategoriesModule.vue START */
+.categories-module {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    height: 100%;
+}
+
+.category {
+    flex-basis: 5%;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+/* CategoriesModule.vue END */
+
+/* SettingsModule.vue START */
+
+.settings-module {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.settings-header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.settings-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.settings-item-body{
+    display: none;
+    position: absolute;
+    width: 100%;
+}
+
+.settings-item-header:hover + .settings-item-body{
+    display: flex;
+}
+
+.settings-item-body:hover {
+    display: block;
+}
+
+.settings-item-body {
+    display: none;
+    flex-direction: column;
+}
+
+.settings-item-category {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-category-header {
+    flex-grow: 1;
+}
+
+.settings-action {
+    flex-grow: 1;
+}
+
+/* SettingsModule.vue END */
+
+.website-footer {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.website-header {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+Modules styles END
+ */
+
+
+/* Make sections span 100% of height and width START */
+
+.section-grid {
+    display: flex;
+    flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+    .website-layout-grid {
+        grid-template-rows: auto;
+    }
+}
+
+.query-module-input {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* Make sections span 100% of height and width END */
+
+/* Overlay styles START */
+.overlay-wrapper {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.overlay{
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+}
+
+.dimming-overlay {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-grow: 1;
+    background-color:rgba(0,0,0, 0.5);
+
+    padding: 100px;
+}
+
+.overlay-slot {
+    height: 100%;
+    background-color: #0dcaf0;
+}
+
+.overlay-footer {
+
+}
+/* Overlay styles END */
+
+/* data text editor style START */
+.data-text-editor {
+    min-width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.data-text-editor-header {
+    display: flex;
+}
+
+.data-text-editor-body {
+    display: flex;
+    flex-grow: 1;
+
+    flex-direction: column;
+}
+
+.data-text-editor-text-area{
+    display: flex;
+    flex-grow: 1;
+}
+
+.data-text-editor-footer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.data-text-editor-footer *{
+    flex-grow: 1;
+}
+
+.data-text-editor-footer *:hover{
+    background-color: rebeccapurple;
+}
+
+/* data text editor style END */
