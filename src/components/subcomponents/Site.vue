@@ -36,7 +36,7 @@ export default {
 </template>
 <style scoped>
   .site {
-    //flex-direction: column;
+    /* flex-direction: column; */
   }
 
   .site-header {

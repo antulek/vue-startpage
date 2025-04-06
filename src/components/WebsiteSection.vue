@@ -1,5 +1,5 @@
 <script>
-import emitter from "../eventBus.js";
+
 export default {
   props: {
     containerName: {

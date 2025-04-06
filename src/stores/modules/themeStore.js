@@ -14,7 +14,7 @@ export const useThemeStore = defineStore('themeStore', {
                 theme = dataStore.data.settings.themes.currentTheme
             }
 
-            return './src/assets/styles/themes/'+theme+'.css';
+            return './assets/styles/themes/'+theme+'.css';
         }
     },
     actions: {
