@@ -1,6 +1,5 @@
 <script setup>
 // bootstrap and font-awesome icons imports
-import '../src/assets/styles/main.css';
 
 // components imports
 import Website from "./components/Website.vue";
