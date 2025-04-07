@@ -2,7 +2,7 @@ body {
     background-image: url('https://i.imgur.com/nxI5a9i.jpeg');
     background-size: 30%;
     background-repeat: repeat;
-    animation: slide-bg 30s linear infinite;
+    animation: slide-bg 3s linear infinite;
 }
 
 @keyframes slide-bg {
@@ -10,7 +10,7 @@ body {
         background-position: 0 0;
     }
     to {
-        background-position: 100% 100%;
+        background-position: 10% 10%;
     }
 }
 
