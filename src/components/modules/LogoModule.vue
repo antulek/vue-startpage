@@ -57,6 +57,9 @@ export default {
     <div class="logo-module">
 
     </div>
+    <div class="logo-module-alternative">
+
+    </div>
   </Module>
 </template>
 <style scoped>

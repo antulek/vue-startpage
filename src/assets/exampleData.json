@@ -271,8 +271,8 @@
   },
   "settings": {
     "themes": {
-      "themesList": ["debug", "default", "kawaii", "initiald"],
-      "currentTheme": "initiald"
+      "themesList": ["debug", "default", "kawaii", "initiald", "arizona-pink"],
+      "currentTheme": "arizona-pink"
     }
   }
 }

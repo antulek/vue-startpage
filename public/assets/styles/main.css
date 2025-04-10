@@ -91,6 +91,10 @@ Modules styles START
     height: 100%;
     background-position: 50% 50%;
 }
+.logo-module-alternative {
+    height: 100%;
+    background-position: 50% 50%;
+}
 /* LogoModule.vue END */
 
 /* QueryModule.vue START */
