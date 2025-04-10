@@ -1,5 +1,30 @@
 {
-  "categories": [],
+  "categories": [
+    {
+      "name": "News",
+      "sites": [
+        {
+          "name": "BBC",
+          "address": "https://www.bbc.com",
+          "icon": "🌍",
+          "color": "#005BBC"
+        },
+        {
+          "name": "CNN",
+          "address": "https://www.cnn.com"
+        },
+        {
+          "address": "https://www.theguardian.com"
+        },
+        {
+          "name": "NY Times",
+          "address": "https://www.nytimes.com",
+          "icon": "🗞️",
+          "color": "#000000"
+        }
+      ]
+    }
+  ],
   "logo": {
     "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/640px-Wikipedia-logo-v2.svg.png"
   },

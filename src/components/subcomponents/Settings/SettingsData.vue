@@ -26,6 +26,7 @@ export default {
   },
   data(){
     return{
+      show: false,
       storageOptions: ['local storage', 'file', 'json'],
       actionsOptions: ['import', 'export']
     }
@@ -39,10 +40,10 @@ export default {
 </script>
 <template>
   <div class="settings-item">
-    <div class="settings-item-header">
+    <div class="settings-item-header" @click="show = !show">
       Data
     </div>
-    <div class="settings-item-body" :style="dropStyle">
+    <div v-if="show" class="settings-item-body" :style="dropStyle">
       <div class="settings-item-category" >
         <div class="settings-category-header">
           File

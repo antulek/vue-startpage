@@ -22,6 +22,7 @@ import {useDataStore} from "../../../stores/dataStore.js";
     data() {
       return {
         dataStore: useDataStore(), // ✅ Store instance in `data()`
+        show: false,
       };
     },
     methods: {
@@ -34,10 +35,10 @@ import {useDataStore} from "../../../stores/dataStore.js";
 </script>
 <template>
   <div class="settings-item">
-    <div class="settings-item-header">
+    <div class="settings-item-header" @click="show = !show">
       Themes ({{themesData.currentTheme}})
     </div>
-    <div class="settings-item-body" :style="dropStyle">
+    <div v-if="show" class="settings-item-body" :style="dropStyle">
       <template v-if="themesData && themesData.themesList" >
         <div v-for="themeName in themesData.themesList"
            class="settings-action"

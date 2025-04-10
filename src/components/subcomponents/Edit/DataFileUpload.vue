@@ -10,7 +10,6 @@ export default {
   },
   data() {
     return {
-      file: null,
       fileContents: null,
     }
   },

@@ -59,9 +59,7 @@ export default defineComponent({
         v-bind="overlayStore.overlayProps"
         @close="overlayStore.hide"
     >
-<!--      <DataTextEditor @close="overlayStore.hide()">
 
-      </DataTextEditor>-->
     </component>
   </div>
 </template>

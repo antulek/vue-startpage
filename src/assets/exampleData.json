@@ -28,6 +28,18 @@
           "address": "https://www.nytimes.com",
           "icon": "🗞️",
           "color": "#000000"
+        },
+        {
+          "name": "Reuters",
+          "address": "https://www.reuters.com",
+          "icon": "🧭",
+          "color": "#FF9900"
+        },
+        {
+          "name": "Al Jazeera",
+          "address": "https://www.aljazeera.com",
+          "icon": "🌐",
+          "color": "#A52A2A"
         }
       ]
     },
@@ -56,6 +68,18 @@
           "search_address": "https://www.bleacherreport.com/search?q=",
           "icon": "⚾",
           "color": "#FFD700"
+        },
+        {
+          "name": "Sky Sports",
+          "address": "https://www.skysports.com",
+          "icon": "⛹️",
+          "color": "#013A81"
+        },
+        {
+          "name": "FOX Sports",
+          "address": "https://www.foxsports.com",
+          "icon": "🏈",
+          "color": "#004282"
         }
       ]
     },
@@ -84,6 +108,18 @@
           "search_address": "https://www.theverge.com/search?q=",
           "icon": "📱",
           "color": "#8B0000"
+        },
+        {
+          "name": "Ars Technica",
+          "address": "https://arstechnica.com",
+          "icon": "🧠",
+          "color": "#FF6600"
+        },
+        {
+          "name": "CNET",
+          "address": "https://www.cnet.com",
+          "icon": "🛠️",
+          "color": "#B22222"
         }
       ]
     },
@@ -112,6 +148,18 @@
           "search_address": "https://www.youtube.com/results?search_query=",
           "icon": "📺",
           "color": "#FF0000"
+        },
+        {
+          "name": "Hulu",
+          "address": "https://www.hulu.com",
+          "icon": "📽️",
+          "color": "#1CE783"
+        },
+        {
+          "name": "Rotten Tomatoes",
+          "address": "https://www.rottentomatoes.com",
+          "icon": "🍅",
+          "color": "#D62D20"
         }
       ]
     },
@@ -140,6 +188,80 @@
           "search_address": "https://www.sciencedaily.com/releases/search?q=",
           "icon": "🔬",
           "color": "#007BFF"
+        },
+        {
+          "name": "Live Science",
+          "address": "https://www.livescience.com",
+          "icon": "🧬",
+          "color": "#6A1B9A"
+        },
+        {
+          "name": "Scientific American",
+          "address": "https://www.scientificamerican.com",
+          "icon": "📚",
+          "color": "#8C8C8C"
+        }
+      ]
+    },
+    {
+      "name": "Finance",
+      "icon": "💰",
+      "color": "#00B894",
+      "sites": [
+        {
+          "name": "Yahoo Finance",
+          "address": "https://finance.yahoo.com",
+          "icon": "💹",
+          "color": "#5F0F40"
+        },
+        {
+          "name": "Investopedia",
+          "address": "https://www.investopedia.com",
+          "icon": "📈",
+          "color": "#34495E"
+        },
+        {
+          "name": "Bloomberg",
+          "address": "https://www.bloomberg.com",
+          "icon": "📰",
+          "color": "#3C3C3C"
+        },
+        {
+          "name": "MarketWatch",
+          "address": "https://www.marketwatch.com",
+          "icon": "📊",
+          "color": "#1E8449"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "icon": "🎓",
+      "color": "#6F42C1",
+      "sites": [
+        {
+          "name": "Khan Academy",
+          "address": "https://www.khanacademy.org",
+          "icon": "📘",
+          "color": "#1A73E8"
+        },
+        {
+          "name": "Coursera",
+          "address": "https://www.coursera.org",
+          "icon": "🧑‍🏫",
+          "color": "#2A73CC"
+        },
+        {
+          "name": "edX",
+          "address": "https://www.edx.org",
+          "icon": "📖",
+          "color": "#0066B8"
+        },
+        {
+          "name": "Duolingo",
+          "address": "https://www.duolingo.com",
+          "icon": "🦉",
+          "color": "#58CC02"
         }
       ]
     }
@@ -149,7 +271,7 @@
   },
   "settings": {
     "themes": {
-      "themesList": ["debug","default", "kawaii"],
+      "themesList": ["debug", "default", "kawaii", "dark", "light", "pastel"],
       "currentTheme": "debug"
     }
   }
