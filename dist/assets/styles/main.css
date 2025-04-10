@@ -154,7 +154,7 @@ Modules styles START
 }
 
 .settings-item-body{
-    display: none;
+    /*display: none;*/
     position: absolute;
     width: 100%;
 }
@@ -168,7 +168,7 @@ Modules styles START
 }
 
 .settings-item-body {
-    display: none;
+    /*display: none;*/
     flex-direction: column;
 }
 
@@ -262,6 +262,7 @@ Modules styles END
 .overlay-footer-cancel {
     background-color: red;
 }
+
 /* Overlay styles END */
 
 /* data text editor style START */
@@ -299,8 +300,6 @@ Modules styles END
     flex-grow: 1;
 }
 
-.data-text-editor-footer *:hover{
-    background-color: rebeccapurple;
-}
+
 
 /* data text editor style END */

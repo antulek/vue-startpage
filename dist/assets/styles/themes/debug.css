@@ -63,4 +63,8 @@ body {
 .data-text-editor-footer {
     background-color: green;
 }
+
+.data-text-editor-footer *:hover{
+    background-color: rebeccapurple;
+}
 /* data text editor style END */

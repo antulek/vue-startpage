@@ -140,6 +140,10 @@ Modules styles START
     flex-grow: 1;
 }
 
+.settings-module * {
+    background-color: whitesmoke;
+}
+
 .settings-header {
     display: flex;
     flex-direction: row;
@@ -154,7 +158,6 @@ Modules styles START
 }
 
 .settings-item-body{
-    /*display: none;*/
     position: absolute;
     width: 100%;
 }
@@ -168,7 +171,6 @@ Modules styles START
 }
 
 .settings-item-body {
-    /*display: none;*/
     flex-direction: column;
 }
 
@@ -272,6 +274,8 @@ Modules styles END
 
     display: flex;
     flex-direction: column;
+
+    background-color: whitesmoke;
 }
 
 .data-text-editor-header {

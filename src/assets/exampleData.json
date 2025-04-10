@@ -271,8 +271,8 @@
   },
   "settings": {
     "themes": {
-      "themesList": ["debug", "default", "kawaii", "dark", "light", "pastel"],
-      "currentTheme": "debug"
+      "themesList": ["debug", "default", "kawaii", "initiald"],
+      "currentTheme": "initiald"
     }
   }
 }
