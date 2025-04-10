@@ -38,11 +38,26 @@ export const useDataStore = defineStore('dataStore',{
       },
       /* Local Storage END */
       /* JSON Storage START */
-      saveJsonStorage(){
-
+      loadFromJSON(json){
+         try{
+            let parsedData = JSON.parse(json);
+         }catch (error){
+            console.error(error);
+            return null;
+         }
+         this.data = {...JSON.parse(json)};
       },
-      discardJsonStorage(){
+      downloadJson(data, filename="data") {
+         const dataStr = JSON.stringify(data, null, 2)
+         const blob = new Blob([dataStr], { type: 'application/json' })
+         const url = URL.createObjectURL(blob)
 
+         const link = document.createElement('a')
+         link.href = url
+         link.download = filename+'.json'
+         link.click()
+
+         URL.revokeObjectURL(url)
       },
       /* JSON Storage END */
       dataTransfer(action, storage){

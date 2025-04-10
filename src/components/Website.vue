@@ -34,6 +34,7 @@ export default defineComponent({
     const componentMap = reactive({
       overlay: Overlay,
       dimmingOverlay: DimmingOverlay,
+      dataTextEditor: DataTextEditor,
       // Add more overlays as needed
     });
 
@@ -58,9 +59,9 @@ export default defineComponent({
         v-bind="overlayStore.overlayProps"
         @close="overlayStore.hide"
     >
-      <DataTextEditor>
+<!--      <DataTextEditor @close="overlayStore.hide()">
 
-      </DataTextEditor>
+      </DataTextEditor>-->
     </component>
   </div>
 </template>

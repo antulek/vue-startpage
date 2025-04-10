@@ -127,6 +127,9 @@ parts of UI:
 ---file
 ---*pastebin
 ---@import/export([localStorage/file/pastebin])
+---copy/paste text-area
+----interactive text-area
+----actions: select all, copy, paste, close
 -greeter - text saying something "hello XYZ" and weather or current date
 --features
 ---hello {name} - ability to insert your name

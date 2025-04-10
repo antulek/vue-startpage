@@ -258,6 +258,11 @@ Modules styles END
 .overlay-footer {
 
 }
+
+.overlay-footer-cancel {
+    background-color: red;
+}
+
 /* Overlay styles END */
 
 /* data text editor style START */

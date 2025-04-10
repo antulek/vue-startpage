@@ -1,5 +1,6 @@
 <script>
 import {useDataStore} from "../../../stores/dataStore.js";
+import {useOverlayStore} from "../../../stores/overlayStore.js";
 
 export default {
   data(){
@@ -9,19 +10,19 @@ export default {
   },
   setup(){
     const dataStore = useDataStore();
+    const overlayStore = useOverlayStore();
+
     return {
-      dataStore
+      dataStore,
+      overlayStore
     }
   },
   methods: {
     updateData(){
-      try{
-        let parsedData = JSON.parse(this.jsonData);
-      }catch (error){
-        console.error(error);
-        return null;
-      }
-      this.dataStore.data = {...JSON.parse(this.jsonData)};
+      this.dataStore.loadFromJSON( this.jsonData )
+    },
+    close () {
+      this.$emit('close')
     }
   }
 }
@@ -37,7 +38,12 @@ export default {
       </textarea>
     </div>
     <div class="data-text-editor-footer">
-      <div @click="updateData">SAVE</div>
+      <div class="data-text-editor-button" @click="updateData">
+        save
+      </div>
+      <div class="data-text-editor-button" @click="close()">
+        cancel
+      </div>
     </div>
   </div>
 </template>

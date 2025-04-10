@@ -20,8 +20,8 @@ export default {
 <template>
   <div class="overlay">
     <div class="overlay-footer">
-      <div style="background-color: red" @click="overlayStore.hide()">
-        DIASBLE
+      <div class="overlay-footer-cancel" @click="overlayStore.hide()">
+        Cancel
       </div>
     </div>
     <div class="overlay-slot">

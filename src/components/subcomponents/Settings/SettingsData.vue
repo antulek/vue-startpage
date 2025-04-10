@@ -1,6 +1,7 @@
 <script setup>
 import { useDataStore } from '../../../stores/dataStore.js';
 import {useOverlayStore} from "../../../stores/overlayStore.js";
+import DataFileUpload from "../Edit/DataFileUpload.vue";
 
 const dataStore = useDataStore();
 const overlayStore = useOverlayStore();
@@ -8,6 +9,9 @@ const overlayStore = useOverlayStore();
 <script>
 
 export default {
+  components: {
+    DataFileUpload
+  },
   props: {
     isDropUp: {
       type: Boolean,
@@ -43,21 +47,21 @@ export default {
         <div class="settings-category-header">
           File
         </div>
-        <div class="settings-action">
-          Export
+        <div class="settings-action" @click="dataStore.downloadJson(dataStore.data, 'startpage')">
+          Download
         </div>
         <div class="settings-action">
-          Import
+          <DataFileUpload></DataFileUpload>
         </div>
       </div>
       <div class="settings-item-category" >
         <div class="settings-category-header">
           JSON
         </div>
-        <div class="settings-action" @click="overlayStore.show('dimmingOverlay')">
-          Copy to clipboard
+        <div class="settings-action" @click="dataStore.downloadJson(dataStore.data, 'startpage')">
+          Download
         </div>
-        <div class="settings-action" @click="overlayStore.show('overlay')">
+        <div class="settings-action" @click="overlayStore.show('dataTextEditor')">
           Edit
         </div>
       </div>

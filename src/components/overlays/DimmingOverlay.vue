@@ -21,14 +21,7 @@ export default {
 }
 </script>
 <template>
-  <div class="dimming-overlay">
-    <div class="overlay-footer">
-      <div style="background-color: red" @click="overlayStore.hide()">
-        DIASBLE
-      </div>
-    </div>
-    <div class="overlay-slot">
-      <slot></slot>
-    </div>
-  </div>
+  <Overlay class="dimming-overlay">
+    <slot></slot>
+  </Overlay>
 </template>
