@@ -1,6 +1,6 @@
 :root {
     --bg-frame-color: #FFF;
-    --bg-color: #4DDEB5;
+    --bg-color: #5fcba7;
     --accent-color: #FFAAAA;
     --accent-color-darker: color-mix(in srgb, rgba(0, 0, 0, 1) 20%, var(--accent-color) 80%);
     --accent-color-lighter: color-mix(in srgb, rgba(255,255,255, 1) 40%, var(--accent-color) 60%);
@@ -171,15 +171,25 @@ body {
 /* hovering etc START */
 input:hover, button:hover {
     background-color: var(--accent-color-much-lighter);
+
 }
 
 .site-header:hover {
     background-color: var(--accent-color-lighter);
 }
-
-
-
 /* hovering etc END */
+
+/* shadows and deepnees START */
+.logo-module-alternative, .query-module-input, .category {
+    box-shadow: 0px 0px 11px 1px rgba(0,0,0,0.6);
+    outline: 1px solid black;
+}
+
+.website-layout-grid {
+    box-shadow: 0px 0px 30px -15px inset black;
+}
+
+/* shadows and deepnees END */
 
 
 @media (min-width: 768px) {
