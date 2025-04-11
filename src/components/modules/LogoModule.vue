@@ -54,11 +54,10 @@ export default {
 </script>
 <template>
   <Module>
-    <div class="logo-module">
-
-    </div>
     <div class="logo-module-alternative">
+      <div class="logo-module">
 
+      </div>
     </div>
   </Module>
 </template>
