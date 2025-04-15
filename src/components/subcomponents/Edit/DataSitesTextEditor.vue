@@ -4,7 +4,7 @@ import {useSitesTextEditorStore} from "../../../stores/modules/sitesTextEditorSt
 export default {
   data(){
     return {
-      manualHeightStates: [73,40,0],
+      manualHeightStates: [25,0],
       currentManualHeightIndex: 0,
       rawConfig: "",
       debounceTimeout: null,
@@ -40,6 +40,7 @@ export default {
       sitesTextEditorStore
     };
   },
+
   created() {
     this.debouncedParseInput = this.debounceEvent(this.sitesTextEditorStore.parseInput);
   }

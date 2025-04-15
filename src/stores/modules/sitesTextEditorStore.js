@@ -24,7 +24,7 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
         parseInput(event) {
             let isWordCharacterRegex = new RegExp("\\w");
             let openedCategoryIndex = null;
-            let openedSiteIndex = null;
+            let lastSiteObject = null;
 
             let parsedData = [];
             let currentObject = null;
@@ -36,26 +36,38 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
                 line = line.trimStart();
                 switch(line.charAt(0)){
                     case SITE_SUFFIX:
-                        console.log("Adding site: "+line);
-                        this.parseFields(line, "site");
+                        line = line.substring(1);
+                        currentObject = this.parseFields(line, "site");
+                        if(currentObject && openedCategoryIndex != null){
+                            parsedData[openedCategoryIndex].sites.push(currentObject);
+                            lastSiteObject = currentObject;
+                        }
                         break;
                     case SUBSITE_SUFFIX:
-                        console.log("Adding subsite: "+line);
-                        this.parseFields(line, "subsite");
+                        line = line.substring(1);
+                        currentObject = this.parseFields(line, "subsite");
+                        if(currentObject && openedCategoryIndex != null){
+                            parsedData[openedCategoryIndex].sites.push(currentObject);
+                        }
                         break;
                     default:
                         if(isWordCharacterRegex.test(line.charAt(0))){
-                            console.log("Adding category: "+line);
-                            this.parseFields(line,"category");
-                            //this.parseCategory(line);
+                            currentObject = this.parseFields(line,"category");
+                            if(currentObject){
+                                parsedData.push(currentObject);
+                                openedCategoryIndex = parsedData.length-1;
+                            }
+
+                            lastSiteObject = null;
                         }else{
-                            console.error("Wrong amount of spaces!");
+                            console.error("Wrong character!");
                         }
                         break;
                 }
 
-                console.log(parsedData);
+                currentObject = null;
             });
+            return parsedData;
         },
         parseFields(string, type){
             let fields = string.split('|');
@@ -71,6 +83,10 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
                     parsedObject[FIELD_NAMES[type][i]] = fields[i].trim();
                 }
             }
+
+            if(type == 'category' || type == 'site')
+                parsedObject.sites = [];
+
             if( Object.values(parsedObject).length )
                 return parsedObject;
             else
