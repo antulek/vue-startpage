@@ -4,7 +4,8 @@ import {defineComponent, reactive} from "vue";
 import WebsiteLayout from "./WebsiteLayout.vue";
 import Overlay from "./overlays/Overlay.vue";
 import DimmingOverlay from "./overlays/DimmingOverlay.vue";
-import DataTextEditor from "./subcomponents/Edit/DataTextEditor.vue"
+import DataJsonEditor from "./subcomponents/Edit/DataJsonEditor.vue"
+import DataSitesTextEditor from "./subcomponents/Edit/DataSitesTextEditor.vue";
 
 import {useOverlayStore} from "../stores/overlayStore.js";
 
@@ -12,7 +13,7 @@ export default defineComponent({
   components: {
     WebsiteLayout,
     DimmingOverlay,
-    DataTextEditor
+    DataJsonEditor
   },
   props: {
     dataStore: {
@@ -34,9 +35,12 @@ export default defineComponent({
     const componentMap = reactive({
       overlay: Overlay,
       dimmingOverlay: DimmingOverlay,
-      dataTextEditor: DataTextEditor,
+      dataJsonEditor: DataJsonEditor,
+      dataSitesTextEditor: DataSitesTextEditor,
       // Add more overlays as needed
     });
+
+    overlayStore.activeOverlay = 'dataSitesTextEditor';
 
     // Return everything that needs to be accessible in the template
     return {

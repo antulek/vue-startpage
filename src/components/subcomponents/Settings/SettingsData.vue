@@ -62,8 +62,11 @@ export default {
         <div class="settings-action" @click="dataStore.downloadJson(dataStore.data, 'startpage')">
           Download
         </div>
-        <div class="settings-action" @click="overlayStore.show('dataTextEditor')">
+        <div class="settings-action" @click="overlayStore.show('dataJsonEditor')">
           Edit
+        </div>
+        <div class="settings-action" @click="overlayStore.show('dataSitesTextEditor')">
+          Edit TEXT
         </div>
       </div>
       <div class="settings-item-category" >

@@ -28,20 +28,20 @@ export default {
 }
 </script>
 <template>
-  <div class="data-text-editor">
-    <div class="data-text-editor-header">
+  <div class="data-json-editor">
+    <div class="data-json-editor-header">
       Edit Data here!
     </div>
-    <div class="data-text-editor-body">
-      <textarea class="data-text-editor-text-area" v-model="jsonData">
+    <div class="data-json-editor-body">
+      <textarea class="data-json-editor-text-area" v-model="jsonData">
 
       </textarea>
     </div>
-    <div class="data-text-editor-footer">
-      <div class="data-text-editor-button" @click="updateData">
+    <div class="data-json-editor-footer">
+      <div class="data-json-editor-button" @click="updateData">
         save
       </div>
-      <div class="data-text-editor-button" @click="close()">
+      <div class="data-json-editor-button" @click="close()">
         cancel
       </div>
     </div>
