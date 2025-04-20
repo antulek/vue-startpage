@@ -271,6 +271,44 @@ Modules styles END
 
 /* Overlay styles END */
 
+/* data json editor style START */
+.data-json-editor {
+    min-width: 100%;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: whitesmoke;
+}
+
+.data-json-editor-header {
+    display: flex;
+}
+
+.data-json-editor-body {
+    display: flex;
+    flex-grow: 1;
+
+    flex-direction: column;
+}
+
+.data-json-editor-text-area{
+    display: flex;
+    flex-grow: 1;
+}
+
+.data-json-editor-footer {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.data-json-editor-footer *{
+    flex-grow: 1;
+}
+/* data json editor style END */
+
 /* data text editor style START */
 .data-text-editor {
     min-width: 100%;
@@ -284,6 +322,12 @@ Modules styles END
 
 .data-text-editor-header {
     display: flex;
+    flex-direction: column;
+}
+
+.data-text-editor .text-editor-manual{
+    text-wrap: wrap;
+    overflow: scroll;
 }
 
 .data-text-editor-body {
@@ -307,7 +351,4 @@ Modules styles END
 .data-text-editor-footer *{
     flex-grow: 1;
 }
-
-
-
 /* data text editor style END */
