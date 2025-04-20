@@ -24,9 +24,7 @@ import Site from "./Site.vue";
       </div>
     </div>
     <div class="category-sites">
-      <Site v-for="site in category.sites" :site="site" class="site">
-        {{site.name}}
-      </Site>
+      <Site v-for="site in category.sites" :site="site" class="site" />
     </div>
   </div>
 </template>

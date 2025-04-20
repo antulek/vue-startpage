@@ -21,7 +21,72 @@ const FIELDS_REGEX = {
 
 export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
     actions: {
-        parseInput(event) {
+        /* internal helper functions start */
+        getBaseSite(address){
+            let domainRegex = new RegExp("(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]");
+            let domain= domainRegex.exec(address).toString();
+            if(domain.length === 0)return null;
+            if(domain.substring(0,4) != "www.")
+                domain = "www."+domain;
+            return domain;
+        },
+        /* internal helper functions end */
+        stringifyCurrentSites(categories){
+            let separator = " | ";
+            let string = "";
+            /*
+            sites.forEach((category) => {
+                string += '\n' + category.name + separator + category.color + separator + category.icon + '\n';
+                category.sites.forEach((site) => {
+                    string += SITE_SUFFIX + site.address + separator + site.name + separator + site.search_address + separator + site.color + separator + site.icon + '\n';
+                });
+            });
+             */
+            categories.forEach((category) => {
+                string += '\n';
+                let separatorCount = (Object.values(category).length)-2;
+                FIELD_NAMES.category.forEach((categoryFieldName) => {
+                    string += category[categoryFieldName] ?? '';
+                    if(separatorCount > 0){
+                        string += separator;
+                        separatorCount--;
+                    }
+                });
+                string += '\n';
+
+                let prevDomain = null;
+                let prevDomainFresh = true;
+                category.sites.forEach((site) => {
+                    prevDomainFresh = false;
+                    if(prevDomain == null || prevDomain != this.getBaseSite(site.address)) {
+                        prevDomain = this.getBaseSite(site.address);
+                        prevDomainFresh = true;
+                    }
+
+                    let siteSeparatorCount = (Object.values(site).length)-1;
+                    if(prevDomainFresh)string += '-';
+                    else string+='+';
+                    FIELD_NAMES.site.forEach((siteFieldName) => {
+                        if(site[siteFieldName] && site[siteFieldName].length && ( (siteFieldName == 'address' && !prevDomainFresh) || (siteFieldName == 'search_address' && prevDomainFresh)) ){
+                            //console.log("not fresh! "+this.getBaseSite(site[siteFieldName]));
+                            //console.log("cutting: "+site[siteFieldName].slice(prevDomain.length));
+                            string += site[siteFieldName].slice(prevDomain.length);
+                        }else{
+                            string += site[siteFieldName] ?? '';
+                        }
+
+                        if(siteSeparatorCount > 0){
+                            string += separator;
+                            siteSeparatorCount--;
+                        }
+                    });
+                    string += '\n';
+                })
+            });
+
+            return string;
+        },
+        parseInput(input) {
             let isWordCharacterRegex = new RegExp("\\w");
             let openedCategoryIndex = null;
             let lastSiteObject = null;
@@ -29,7 +94,7 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
             let parsedData = [];
             let currentObject = null;
 
-            event.target.value.split(/\r?\n|\r|\n/g).forEach((line) => {
+            input.split(/\r?\n|\r|\n/g).forEach((line) => {
                 if( line.trim().length === 0 || line.trim().charAt(0) === '#')
                     return;
 
@@ -41,13 +106,15 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
                         if(currentObject && openedCategoryIndex != null){
                             parsedData[openedCategoryIndex].sites.push(currentObject);
                             lastSiteObject = currentObject;
+                            //console.log(currentObject.address+" domain:"+this.getBaseSite(currentObject.address));
                         }
                         break;
                     case SUBSITE_SUFFIX:
                         line = line.substring(1);
-                        currentObject = this.parseFields(line, "subsite");
+                        currentObject = this.parseFields(line, "subsite", lastSiteObject);
                         if(currentObject && openedCategoryIndex != null){
                             parsedData[openedCategoryIndex].sites.push(currentObject);
+                            //console.log(currentObject.address+" domain:"+this.getBaseSite(currentObject.address));
                         }
                         break;
                     default:
@@ -67,9 +134,10 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
 
                 currentObject = null;
             });
+            console.log(parsedData);
             return parsedData;
         },
-        parseFields(string, type){
+        parseFields(string, type, lastSiteObject = null){
             let fields = string.split('|');
             let minLength = Math.min(fields.length, FIELD_NAMES[type].length);
             let parsedObject = {};
@@ -84,8 +152,32 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
                 }
             }
 
-            if(type == 'category' || type == 'site')
+            if(type == 'category'){
                 parsedObject.sites = [];
+            }
+
+            if((type == 'site') && Object.values(parsedObject).length >= 3
+                && parsedObject.search_address.length > 0 && parsedObject.search_address.charAt(0) == '/'){
+                console.log("Shorthand search! "+this.getBaseSite(parsedObject.address)+parsedObject.search_address);
+            }
+
+
+            if(type == 'subsite' && Object.values(parsedObject).length >= 1
+                && parsedObject.address.length > 0 && parsedObject.address.charAt(0) == '/'){
+                console.log("appending domain: "+this.getBaseSite( lastSiteObject.address )+" to: "+parsedObject.address);
+                parsedObject.address = this.getBaseSite( lastSiteObject.address ) + parsedObject.address;
+            }
+
+            if(type == 'subsite' && Object.values(parsedObject).length >= 3
+                && parsedObject.search_address.length > 0 && parsedObject.search_address.charAt(0) == '/'){
+                console.log("appending search domain: "+this.getBaseSite( lastSiteObject.address )+" to: "+parsedObject.search_address);
+                parsedObject.search_address = this.getBaseSite( lastSiteObject.address ) + parsedObject.search_address;
+            }
+
+            if(type != 'category'){
+                if(parsedObject.address.substring(0,4) != "www.")
+                    parsedObject.address = "www."+parsedObject.address;
+            }
 
             if( Object.values(parsedObject).length )
                 return parsedObject;

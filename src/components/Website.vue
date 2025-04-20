@@ -40,8 +40,6 @@ export default defineComponent({
       // Add more overlays as needed
     });
 
-    overlayStore.activeOverlay = 'dataSitesTextEditor';
-
     // Return everything that needs to be accessible in the template
     return {
       overlayStore,

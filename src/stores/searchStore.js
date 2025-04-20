@@ -23,6 +23,9 @@ export const useSearchStore = defineStore('searchStore',{
                 destination = site.search_address+encodeURI(query);
             }
 
+            if(!destination.includes(':'))
+                destination = 'https://'+destination;
+
 
             if(query || site){
                 if(newTab)

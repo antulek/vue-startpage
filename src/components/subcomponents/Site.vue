@@ -29,7 +29,12 @@ export default {
         {{ site.icon }}
       </div>
       <div class="site-header-name">
-        {{ site.name }}
+        <template v-if="site.name">
+          {{site.name}}
+        </template>
+        <template v-else>
+          {{site.address}}
+        </template>
       </div>
     </div>
   </div>

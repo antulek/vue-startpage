@@ -1,5 +1,6 @@
 <script>
 import {useSitesTextEditorStore} from "../../../stores/modules/sitesTextEditorStore.js";
+import {useDataStore} from "../../../stores/dataStore.js";
 
 export default {
   data(){
@@ -8,6 +9,7 @@ export default {
       currentManualHeightIndex: 0,
       rawConfig: "",
       debounceTimeout: null,
+      debounceReturn: null
     }
   },
   computed: {
@@ -32,17 +34,23 @@ export default {
         }, delay)
       }
     },
-
+    saveSites(){
+      let parsed = this.sitesTextEditorStore.parseInput(this.rawConfig);
+      this.dataStore.data['categories'] = parsed;
+      console.log(parsed);
+    }
   },
   setup(){
     const sitesTextEditorStore = useSitesTextEditorStore();
+    const dataStore = useDataStore();
     return {
-      sitesTextEditorStore
+      sitesTextEditorStore,
+      dataStore
     };
   },
-
   created() {
     this.debouncedParseInput = this.debounceEvent(this.sitesTextEditorStore.parseInput);
+    this.rawConfig = this.sitesTextEditorStore.stringifyCurrentSites( this.dataStore.data.categories );
   }
 }
 </script>
@@ -96,12 +104,10 @@ export default {
 #  unixporn,/r/unixporn
 #  /r/unixporn-->
 
-# category_name
-# category_name | #color | 'icon'
-# -site_address
-# -site_name | site_address | #color | search_address | 'icon'
-# +subsite_subaddress
-# +subsite_name | subsite_address | #color | subsite_search_address | 'icon'
+category_name | hex_color | emoji
+category_name
+-site_address | site_name | site_search_address | site_hex_color | site_emoji
+-site_address
 #
 # category | #faa | C
 # -website | https://www.website.com | 'icon' | https://www.website.com/?q=QUERRY
@@ -112,12 +118,13 @@ export default {
 </pre>
     </div>
     <div class="data-text-editor-body">
-<textarea class="data-text-editor-text-area" v-model="rawConfig" @input="debouncedParseInput">
+<textarea class="data-text-editor-text-area" v-model="rawConfig">
+<!--<textarea class="data-text-editor-text-area" v-model="rawConfig" @input="debouncedParseInput">-->
 
 </textarea>
     </div>
     <div class="data-text-editor-footer">
-      <div class="data-text-editor-button">
+      <div class="data-text-editor-button" @click="saveSites()">
         save
       </div>
       <div class="data-text-editor-button" @click="close()">
