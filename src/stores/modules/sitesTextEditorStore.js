@@ -150,6 +150,7 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
             if((type == 'site') && Object.values(parsedObject).length >= 3
                 && parsedObject.search_address.length > 0 && parsedObject.search_address.charAt(0) == '/'){
                 console.log("Shorthand search! "+this.getBaseSite(parsedObject.address)+parsedObject.search_address);
+                parsedObject.search_address = this.getBaseSite( parsedObject.address ) + parsedObject.search_address;
             }
 
 
