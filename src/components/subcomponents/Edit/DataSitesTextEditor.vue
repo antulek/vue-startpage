@@ -5,7 +5,7 @@ import {useDataStore} from "../../../stores/dataStore.js";
 export default {
   data(){
     return {
-      manualHeightStates: [25,0],
+      manualHeightStates: [40,0],
       currentManualHeightIndex: 0,
       rawConfig: "",
       debounceTimeout: null,
@@ -61,65 +61,35 @@ export default {
         Click here to show/hide config instruction!
       </div>
 <pre v-if="editorHeightStyle" class="text-editor-manual" :style="'height:'+editorHeightStyle+'vh'">
-<!--# Click here to show/hide config instruction!
-# Lines that starts with '#' character are comments that will be omitted by parser
-#
-#Hierarchy - category group together sites and their sub-sites. They are marked by number of space identations:
-#Category[no indentation] - it is showed on website as separate 'table', in which You will insert website list
-# Website[1 space] - address to certain website, generally it should point to 'main' site if You want it's sub-sites to work
-#  Subsite[2 spaces] - it's subsite for it's parent (main)website. Full address can be provided, but it's possible to skip address to 'main site' it sub-site address starts with '/' character
-#
-#How you can add a category
-#category_name,icon_address,color
-#category_name,color
-#category_name
+Sites list notation
 
-#How you can add a site
-# site_name,site_address,search_link,icon_address
-# site_name,site_address,search_link
-# site_name,site_address
-# site_address
+0) Lines that starts with '#' character are comments that will be omitted by parser
+1) Hierarchy - categories group sites and subsites together. Sites may have a sub-site, a site on which shares base domain. Each one is defined in separate line
+    categories - are not preceded by any special character
+    sites - are preceded by minus '-' character and should be inside category
+    subsites - are preceded by plus '+' character and should be inside category and after site or subsite
+2) Fields - are meant to be specified in exact order, separated by '|' character. Not all fields are required, only first one is needed:
+    category: name | color(hex) | icon(emoji)
+    site: address | name | search_address | color(hex) | icon(emoji)
+    subsite: address | name | search_address | color(hex) | icon(emoji)
+3) Shorthands - typing full subsite address sometimes is redundant. Starting site/subsite search_address or subsite address with '/' to tells parser to stick this to the end of base domain of parent site.
 
-# search link sometimes have searched word' inside of search link, in that
-# case your searched words will be put into place of word 'QUERY' in search
-# link, or added at the very end of it
-# protip go into site, search 'QUERY' using it's internal search engine and
-# copy resulting link right into this file
+Example config
+News category | #faa | 🌎
+-bbc.com | BBC | bbc.com/search?q= | #000 | 📰
++bbc.com/sports | BBC sports | bbc.co.uk/search?d=SPORT_GNL&q=
 
-#Example
-# reddit,reddit.com,/search?q=
-# reddit,reddit.com
-# reddit.com
+Fun
+-reddit.com
++/r/aww
++/r/cats
++/r/dogs
 
-#How you can add a subsite
-#  subsite_name,site_address,search_link,icon_address
-#  subsite_name,site_address,search_link
-#  subsite_name,site_address
-#  subsite_address
-
-#if site/subsite address starts with '/' it means that it's address will be added atop of parent's address category
-# reddit.com
-#  unixporn,/r/unixporn/,/search?q=QUERY&restrict_sr=on
-#  unixporn,reddit.com/r/unixporn
-#  unixporn,/r/unixporn
-#  /r/unixporn-->
-
-category_name | hex_color | emoji
-category_name
--site_address | site_name | site_search_address | site_hex_color | site_emoji
--site_address
-#
-# category | #faa | C
-# -website | https://www.website.com | 'icon' | https://www.website.com/?q=QUERRY
-# -site | site.com | 'icon' | /?q=
-# -wp.pl
-# +/f1
-# +cars | /cars | 'c' | /q?=
 </pre>
     </div>
     <div class="data-text-editor-body">
-<textarea class="data-text-editor-text-area" v-model="rawConfig">
-<!--<textarea class="data-text-editor-text-area" v-model="rawConfig" @input="debouncedParseInput">-->
+<textarea class="data-text-editor-text-area" v-model="rawConfig"> -->
+<textarea class="data-text-editor-text-area" v-model="rawConfig" @input="debouncedParseInput">
 
 </textarea>
     </div>

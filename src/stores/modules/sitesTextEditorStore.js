@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
 
 const SEPARATOR = ' | ';
 const SITE_SUFFIX = "-";
@@ -34,14 +33,6 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
         stringifyCurrentSites(categories){
             let separator = " | ";
             let string = "";
-            /*
-            sites.forEach((category) => {
-                string += '\n' + category.name + separator + category.color + separator + category.icon + '\n';
-                category.sites.forEach((site) => {
-                    string += SITE_SUFFIX + site.address + separator + site.name + separator + site.search_address + separator + site.color + separator + site.icon + '\n';
-                });
-            });
-             */
             categories.forEach((category) => {
                 string += '\n';
                 let separatorCount = (Object.values(category).length)-2;
@@ -184,8 +175,5 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
             else
                 return null;
         },
-        parseCategory(line){
-            let fields = line.trim().split(SEPARATOR);
-        }
     }
 });

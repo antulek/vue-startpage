@@ -33,20 +33,7 @@ roadblocks
 
 
 todo
-[x]create a rough layout
-[x]-make it mobile friendly
-[x]-split elements of site into separate components
-[x]-modules extends main module component
-[x]communications, common event bus between all components
-[!!!]see roadblocks
--check if data structure is good enough
--importing/exporting data
-[x]-import/export buttons
---to local storage
----should we bind localStorage with dataStore.data reactively?
---place to paste text
---file import/upload
----debug oprion of N pre-defined files
+
 
 Core element and data flow between them
 1)query area
