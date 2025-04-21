@@ -37,7 +37,8 @@ export default {
     saveSites(){
       let parsed = this.sitesTextEditorStore.parseInput(this.rawConfig);
       this.dataStore.data['categories'] = parsed;
-      console.log(parsed);
+      this.dataStore.saveToLocalStorage()
+      this.close();
     }
   },
   setup(){
@@ -88,8 +89,7 @@ Fun
 </pre>
     </div>
     <div class="data-text-editor-body">
-<textarea class="data-text-editor-text-area" v-model="rawConfig"> -->
-<textarea class="data-text-editor-text-area" v-model="rawConfig" @input="debouncedParseInput">
+<textarea class="data-text-editor-text-area" v-model="rawConfig">
 
 </textarea>
     </div>

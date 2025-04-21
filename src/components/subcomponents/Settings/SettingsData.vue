@@ -1,12 +1,7 @@
-<script setup>
+<script>
+import DataFileUpload from "../Edit/DataFileUpload.vue";
 import { useDataStore } from '../../../stores/dataStore.js';
 import {useOverlayStore} from "../../../stores/overlayStore.js";
-import DataFileUpload from "../Edit/DataFileUpload.vue";
-
-const dataStore = useDataStore();
-const overlayStore = useOverlayStore();
-</script>
-<script>
 
 export default {
   components: {
@@ -29,9 +24,22 @@ export default {
       show: false,
     }
   },
+  setup() {
+    const dataStore = useDataStore();
+    const overlayStore = useOverlayStore();
+
+    return {
+      dataStore,
+      overlayStore,
+    };
+  },
   methods: {
     data(action, storage){
       alert(action+" from "+storage)
+    },
+    resetConfigToDefault(){
+      this.dataStore.dataTransfer('import', 'fixed-empty')
+      this.dataStore.saveToLocalStorage();
     }
   }
 }
@@ -46,7 +54,7 @@ export default {
         <div class="settings-category-header">
           File
         </div>
-        <div class="settings-action" @click="dataStore.downloadJson(dataStore.data, 'startpage')">
+        <div class="settings-action" @click="this.dataStore.downloadJson(this.dataStore.data, 'startpage')">
           Download
         </div>
         <div class="settings-action">
@@ -57,13 +65,13 @@ export default {
         <div class="settings-category-header">
           JSON
         </div>
-        <div class="settings-action" @click="dataStore.downloadJson(dataStore.data, 'startpage')">
+        <div class="settings-action" @click="this.dataStore.downloadJson(this.dataStore.data, 'startpage')">
           Download
         </div>
-        <div class="settings-action" @click="overlayStore.show('dataJsonEditor')">
+        <div class="settings-action" @click="this.overlayStore.show('dataJsonEditor')">
           Edit
         </div>
-        <div class="settings-action" @click="overlayStore.show('dataSitesTextEditor')">
+        <div class="settings-action" @click="this.overlayStore.show('dataSitesTextEditor')">
           Edit TEXT
         </div>
       </div>
@@ -71,10 +79,10 @@ export default {
         <div class="settings-category-header">
           Changes
         </div>
-        <div class="settings-action" @click="dataStore.saveToLocalStorage()">
+        <div class="settings-action" @click="this.dataStore.saveToLocalStorage()">
           Save
         </div>
-        <div class="settings-action" @click="dataStore.loadFromLocalStorage()">
+        <div class="settings-action" @click="this.dataStore.loadFromLocalStorage()">
           Discard
         </div>
       </div>
@@ -82,10 +90,10 @@ export default {
         <div class="settings-category-header">
           Debug file
         </div>
-        <div class="settings-action" @click="dataStore.dataTransfer('import', 'fixed-default')">
+        <div class="settings-action" @click="this.dataStore.dataTransfer('import', 'fixed-default')">
           Import Default
         </div>
-        <div class="settings-action" @click="dataStore.dataTransfer('import', 'fixed-empty')">
+        <div class="settings-action" @click="resetConfigToDefault()">
           Import Empty
         </div>
       </div>
