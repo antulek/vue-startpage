@@ -1,7 +1,5 @@
 <script setup>
-// bootstrap and font-awesome icons imports
 
-// components imports
 import Website from "./components/Website.vue";
 import { useDataStore } from './stores/dataStore.js';
 import { useThemeStore } from './stores/modules/themeStore.js';

@@ -1,267 +1,41 @@
 {
   "categories": [
     {
-      "name": "News",
-      "icon": "📰",
-      "color": "#FF5733",
+      "name": "News category",
+      "color": "#faa",
+      "icon": "🌎",
       "sites": [
         {
+          "address": "www.bbc.com",
           "name": "BBC",
-          "address": "https://www.bbc.com",
-          "icon": "🌍",
-          "color": "#005BBC"
+          "search_address": "rch?q=",
+          "color": "#000",
+          "icon": "📰"
         },
         {
-          "name": "CNN",
-          "address": "https://www.cnn.com",
-          "icon": "📺",
-          "color": "#CC0000"
-        },
-        {
-          "name": "The Guardian",
-          "address": "https://www.theguardian.com",
-          "icon": "📰",
-          "color": "#052962"
-        },
-        {
-          "name": "NY Times",
-          "address": "https://www.nytimes.com",
-          "icon": "🗞️",
-          "color": "#000000"
-        },
-        {
-          "name": "Reuters",
-          "address": "https://www.reuters.com",
-          "icon": "🧭",
-          "color": "#FF9900"
-        },
-        {
-          "name": "Al Jazeera",
-          "address": "https://www.aljazeera.com",
-          "icon": "🌐",
-          "color": "#A52A2A"
+          "address": "www.bbc.com/sports",
+          "name": "BBC sports",
+          "search_address": "bbc.co.uk/search?d=SPORT_GNL&q="
         }
       ]
     },
     {
-      "name": "Sports",
-      "icon": "⚽",
-      "color": "#28A745",
+      "name": "Fun",
       "sites": [
         {
-          "name": "ESPN",
-          "address": "https://www.espn.com",
-          "search_address": "https://www.espn.com/search?q=",
-          "icon": "🏆",
-          "color": "#1E3A8A"
+          "address": "www.reddit.com"
         },
         {
-          "name": "Sports Illustrated",
-          "address": "https://www.si.com",
-          "search_address": "https://www.si.com/search?q=",
-          "icon": "🏀",
-          "color": "#F4A261"
+          "address": "www.reddit.com/r/aww",
+          "name": "aww"
         },
         {
-          "name": "Bleacher Report",
-          "address": "https://www.bleacherreport.com",
-          "search_address": "https://www.bleacherreport.com/search?q=",
-          "icon": "⚾",
-          "color": "#FFD700"
+          "address": "www.reddit.com/r/cats",
+          "name": "cats"
         },
         {
-          "name": "Sky Sports",
-          "address": "https://www.skysports.com",
-          "icon": "⛹️",
-          "color": "#013A81"
-        },
-        {
-          "name": "FOX Sports",
-          "address": "https://www.foxsports.com",
-          "icon": "🏈",
-          "color": "#004282"
-        }
-      ]
-    },
-    {
-      "name": "Technology",
-      "icon": "💻",
-      "color": "#007BFF",
-      "sites": [
-        {
-          "name": "TechCrunch",
-          "address": "https://www.techcrunch.com",
-          "search_address": "https://techcrunch.com/search?q=",
-          "icon": "🔧",
-          "color": "#4CAF50"
-        },
-        {
-          "name": "Wired",
-          "address": "https://www.wired.com",
-          "search_address": "https://www.wired.com/search?q=",
-          "icon": "🖥️",
-          "color": "#F44336"
-        },
-        {
-          "name": "The Verge",
-          "address": "https://www.theverge.com",
-          "search_address": "https://www.theverge.com/search?q=",
-          "icon": "📱",
-          "color": "#8B0000"
-        },
-        {
-          "name": "Ars Technica",
-          "address": "https://arstechnica.com",
-          "icon": "🧠",
-          "color": "#FF6600"
-        },
-        {
-          "name": "CNET",
-          "address": "https://www.cnet.com",
-          "icon": "🛠️",
-          "color": "#B22222"
-        }
-      ]
-    },
-    {
-      "name": "Entertainment",
-      "icon": "🎬",
-      "color": "#FFC107",
-      "sites": [
-        {
-          "name": "Netflix",
-          "address": "https://www.netflix.com",
-          "search_address": "https://www.netflix.com/search?q=",
-          "icon": "🎥",
-          "color": "#E50914"
-        },
-        {
-          "name": "IMDb",
-          "address": "https://www.imdb.com",
-          "search_address": "https://www.imdb.com/find?q=",
-          "icon": "🎬",
-          "color": "#FF5733"
-        },
-        {
-          "name": "YouTube",
-          "address": "https://www.youtube.com",
-          "search_address": "https://www.youtube.com/results?search_query=",
-          "icon": "📺",
-          "color": "#FF0000"
-        },
-        {
-          "name": "Hulu",
-          "address": "https://www.hulu.com",
-          "icon": "📽️",
-          "color": "#1CE783"
-        },
-        {
-          "name": "Rotten Tomatoes",
-          "address": "https://www.rottentomatoes.com",
-          "icon": "🍅",
-          "color": "#D62D20"
-        }
-      ]
-    },
-    {
-      "name": "Science",
-      "icon": "🔬",
-      "color": "#17A2B8",
-      "sites": [
-        {
-          "name": "NASA",
-          "address": "https://www.nasa.gov",
-          "search_address": "https://www.nasa.gov/search?q=",
-          "icon": "🚀",
-          "color": "#F8F9FA"
-        },
-        {
-          "name": "National Geographic",
-          "address": "https://www.nationalgeographic.com",
-          "search_address": "https://www.nationalgeographic.com/search?q=",
-          "icon": "🌍",
-          "color": "#4CAF50"
-        },
-        {
-          "name": "Science Daily",
-          "address": "https://www.sciencedaily.com",
-          "search_address": "https://www.sciencedaily.com/releases/search?q=",
-          "icon": "🔬",
-          "color": "#007BFF"
-        },
-        {
-          "name": "Live Science",
-          "address": "https://www.livescience.com",
-          "icon": "🧬",
-          "color": "#6A1B9A"
-        },
-        {
-          "name": "Scientific American",
-          "address": "https://www.scientificamerican.com",
-          "icon": "📚",
-          "color": "#8C8C8C"
-        }
-      ]
-    },
-    {
-      "name": "Finance",
-      "icon": "💰",
-      "color": "#00B894",
-      "sites": [
-        {
-          "name": "Yahoo Finance",
-          "address": "https://finance.yahoo.com",
-          "icon": "💹",
-          "color": "#5F0F40"
-        },
-        {
-          "name": "Investopedia",
-          "address": "https://www.investopedia.com",
-          "icon": "📈",
-          "color": "#34495E"
-        },
-        {
-          "name": "Bloomberg",
-          "address": "https://www.bloomberg.com",
-          "icon": "📰",
-          "color": "#3C3C3C"
-        },
-        {
-          "name": "MarketWatch",
-          "address": "https://www.marketwatch.com",
-          "icon": "📊",
-          "color": "#1E8449"
-        }
-      ]
-    },
-    {
-      "name": "Education",
-      "icon": "🎓",
-      "color": "#6F42C1",
-      "sites": [
-        {
-          "name": "Khan Academy",
-          "address": "https://www.khanacademy.org",
-          "icon": "📘",
-          "color": "#1A73E8"
-        },
-        {
-          "name": "Coursera",
-          "address": "https://www.coursera.org",
-          "icon": "🧑‍🏫",
-          "color": "#2A73CC"
-        },
-        {
-          "name": "edX",
-          "address": "https://www.edx.org",
-          "icon": "📖",
-          "color": "#0066B8"
-        },
-        {
-          "name": "Duolingo",
-          "address": "https://www.duolingo.com",
-          "icon": "🦉",
-          "color": "#58CC02"
+          "address": "www.reddit.com/r/dogs",
+          "name": "dogs"
         }
       ]
     }
@@ -271,7 +45,9 @@
   },
   "settings": {
     "themes": {
-      "themesList": ["debug", "default", "kawaii", "initiald", "arizona-pink"],
+      "themesList": [
+        "arizona-pink"
+      ],
       "currentTheme": "arizona-pink"
     }
   }

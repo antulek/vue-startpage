@@ -1,26 +1,41 @@
 {
   "categories": [
     {
-      "name": "News",
+      "name": "News category",
+      "color": "#faa",
+      "icon": "🌎",
       "sites": [
         {
+          "address": "www.bbc.com",
           "name": "BBC",
-          "address": "https://www.bbc.com",
-          "icon": "🌍",
-          "color": "#005BBC"
+          "search_address": "rch?q=",
+          "color": "#000",
+          "icon": "📰"
         },
         {
-          "name": "CNN",
-          "address": "https://www.cnn.com"
+          "address": "www.bbc.com/sports",
+          "name": "BBC sports",
+          "search_address": "bbc.co.uk/search?d=SPORT_GNL&q="
+        }
+      ]
+    },
+    {
+      "name": "Fun",
+      "sites": [
+        {
+          "address": "www.reddit.com"
         },
         {
-          "address": "https://www.theguardian.com"
+          "address": "www.reddit.com/r/aww",
+          "name": "aww"
         },
         {
-          "name": "NY Times",
-          "address": "https://www.nytimes.com",
-          "icon": "🗞️",
-          "color": "#000000"
+          "address": "www.reddit.com/r/cats",
+          "name": "cats"
+        },
+        {
+          "address": "www.reddit.com/r/dogs",
+          "name": "dogs"
         }
       ]
     }
@@ -30,8 +45,10 @@
   },
   "settings": {
     "themes": {
-      "themesList": ["debug","default", "kawaii"],
-      "currentTheme": "debug"
+      "themesList": [
+        "arizona-pink"
+      ],
+      "currentTheme": "arizona-pink"
     }
   }
 }

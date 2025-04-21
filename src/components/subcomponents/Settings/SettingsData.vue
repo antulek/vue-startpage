@@ -27,8 +27,6 @@ export default {
   data(){
     return{
       show: false,
-      storageOptions: ['local storage', 'file', 'json'],
-      actionsOptions: ['import', 'export']
     }
   },
   methods: {
@@ -92,22 +90,5 @@ export default {
         </div>
       </div>
     </div>
-<!--    <div class="settings-item-body" :style="dropStyle">
-      <div class="settings-item-category"
-           v-for="action in actionsOptions">
-        <div class="settings-category-header">
-          {{action}}
-        </div>
-        <div class="settings-action" v-for="storage in storageOptions"
-          @click="dataStore.dataTransfer(action, storage)">
-          {{storage}}
-        </div>
-      </div>
-      <div class="settings-item-category">
-        <div class="settings-action" @click="dataStore.dataTransfer('import', 'fixed')">
-          Import fixed template
-        </div>
-      </div>
-    </div>-->
   </div>
 </template>
