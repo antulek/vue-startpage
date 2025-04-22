@@ -23,10 +23,17 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
         /* internal helper functions start */
         getBaseSite(address){
             let domainRegex = new RegExp("(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?\\.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]");
-            let domain= domainRegex.exec(address).toString();
+            let domain= domainRegex.exec(address);
+            if(!domain){
+                console.log("DOMAIN NOT FOUND for:"+address);
+                return null;
+            }else{
+                console.log(address+" => "+domain.toString());
+            }
+            domain = domain.toString();
             if(domain.length === 0)return null;
-            if(domain.substring(0,4) != "www.")
-                domain = "www."+domain;
+            if(domain.startsWith("www."))
+                domain = domain.slice(4);
             return domain;
         },
         /* internal helper functions end */
@@ -167,8 +174,11 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
             }
 
             if(type != 'category'){
-                if(parsedObject.address.substring(0,4) != "www.")
-                    parsedObject.address = "www."+parsedObject.address;
+                ['https://', 'http://', 'www.'].forEach((part) => {
+                    if(parsedObject.address.startsWith(part)){
+                        parsedObject.address = parsedObject.address.slice( part.length );
+                    }
+                })
             }
 
             if( Object.values(parsedObject).length )

@@ -23,8 +23,12 @@ export const useSearchStore = defineStore('searchStore',{
                 destination = site.search_address+encodeURI(query);
             }
 
-            if(!destination.includes(':'))
-                destination = 'https://'+destination;
+            if(!destination.includes(':') && !destination.includes('www.'))
+                destination = 'http://www.'+destination;
+            else if(destination.includes(':') && !destination.includes('www.'))
+                destination = destination.replace('://','://www,');
+            else if(!destination.includes(':') && destination.includes('www.'))
+                destination = 'http://'+destination;
 
 
             if(query || site){

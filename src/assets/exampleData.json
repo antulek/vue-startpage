@@ -46,6 +46,8 @@
   "settings": {
     "themes": {
       "themesList": [
+        "kawaii",
+        "debug",
         "arizona-pink"
       ],
       "currentTheme": "arizona-pink"
