@@ -50,51 +50,14 @@ export default {
       Data
     </div>
     <div v-if="show" class="settings-item-body" :style="dropStyle">
-      <div class="settings-item-category" >
-        <div class="settings-category-header">
-          File
-        </div>
-        <div class="settings-action" @click="this.dataStore.downloadJson(this.dataStore.data, 'startpage')">
-          Download
-        </div>
+      <div class="settings-item-category" @click="this.overlayStore.show('dataSitesTextEditor')">
         <div class="settings-action">
-          <DataFileUpload></DataFileUpload>
+          Edit sites
         </div>
       </div>
-      <div class="settings-item-category" >
-        <div class="settings-category-header">
-          JSON
-        </div>
-        <div class="settings-action" @click="this.dataStore.downloadJson(this.dataStore.data, 'startpage')">
-          Download
-        </div>
-        <div class="settings-action" @click="this.overlayStore.show('dataJsonEditor')">
-          Edit
-        </div>
-        <div class="settings-action" @click="this.overlayStore.show('dataSitesTextEditor')">
-          Edit TEXT
-        </div>
-      </div>
-      <div class="settings-item-category" >
-        <div class="settings-category-header">
-          Changes
-        </div>
-        <div class="settings-action" @click="this.dataStore.saveToLocalStorage()">
-          Save
-        </div>
-        <div class="settings-action" @click="this.dataStore.loadFromLocalStorage()">
-          Discard
-        </div>
-      </div>
-      <div class="settings-item-category" >
-        <div class="settings-category-header">
-          Debug file
-        </div>
-        <div class="settings-action" @click="this.dataStore.dataTransfer('import', 'fixed-default')">
-          Import Default
-        </div>
-        <div class="settings-action" @click="resetConfigToDefault()">
-          Import Empty
+      <div class="settings-item-category" @click="resetConfigToDefault()">
+        <div class="settings-action">
+          Reset to default
         </div>
       </div>
     </div>

@@ -27,8 +27,6 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
             if(!domain){
                 console.log("DOMAIN NOT FOUND for:"+address);
                 return null;
-            }else{
-                console.log(address+" => "+domain.toString());
             }
             domain = domain.toString();
             if(domain.length === 0)return null;
@@ -164,6 +162,9 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
             if(type == 'subsite' && Object.values(parsedObject).length >= 1
                 && parsedObject.address.length > 0 && parsedObject.address.charAt(0) == '/'){
                 console.log("appending domain: "+this.getBaseSite( lastSiteObject.address )+" to: "+parsedObject.address);
+                if(Object.values(parsedObject).length == 1){
+                    parsedObject.name = parsedObject.address;
+                }
                 parsedObject.address = this.getBaseSite( lastSiteObject.address ) + parsedObject.address;
             }
 
@@ -180,6 +181,7 @@ export const useSitesTextEditorStore = defineStore('sitesTextEditor', {
                     }
                 })
             }
+
 
             if( Object.values(parsedObject).length )
                 return parsedObject;
