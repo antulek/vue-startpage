@@ -23,18 +23,18 @@
       "name": "Fun",
       "sites": [
         {
-          "address": "www.reddit.com"
+          "address": "reddit.com"
         },
         {
-          "address": "www.reddit.com/r/aww",
+          "address": "reddit.com/r/aww",
           "name": "aww"
         },
         {
-          "address": "www.reddit.com/r/cats",
+          "address": "reddit.com/r/cats",
           "name": "cats"
         },
         {
-          "address": "www.reddit.com/r/dogs",
+          "address": "reddit.com/r/dogs",
           "name": "dogs"
         }
       ]
