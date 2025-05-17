@@ -1,0 +1,144 @@
+goals
+-create vue app
+-hosted and available
+-easy deploy
+-follows a good project structure
+
+features
+-search functionality
+-mobile friendly
+-multiple themes support
+-sites list is stored in local storage
+--supports import/export
+-settings exported/imported with json file
+-can change number of columns
+--can change order of modules
+
+style hierarchy:
+-scoped style inside vue component - most basic styling, that holds very basic structure of site and elements
+-main.css - basic paddings and rules that make basic site look 'good enough', or rules that are needed by all themes
+-theme.css - sits atop of everything else, changes basic site into anything you want
+--default.css - default theme
+*colorscheme.[css/js/vue] - some strict definition of colors used in page
+
+fun features
+-typing part of site name to show only those that fit query - {https://www.reddit.com/media?url=https%3A%2F%2Fi.redd.it%2Fzmx3rlyqyqfa1.gif}
+
+roadblocks
+[x]communications, common event bus between all components
+!-how to enable/disable modules
+!--project fails on loading empty data
+-how much you can fetch and embed into site from external sites (xkcd comic)
+-how to order modules on mobile and desktop
+
+
+todo
+-design (visually) forms for editing/adding sites/categories
+-design (visually) how to change categories/sites order on desktop and mobile
+-make form and overlay for sites/categories editing/adding
+-make validation for forms and for sites data
+
+Core element and data flow between them
+1)query area
+2)categories and sites
+3)category/site form
+4)import/export
+
+Data needed for Application:
+! can all app data be only stored in modules?
+!-modules enabling/disabling?
+!-prevent app crashing on wrong data structure?
+!-who is meant to launch schema errros an where?
+!--where to show them?
+-layout of page sections - specify webisteLayout and feed data into it
+-categories/sites data - feed into categories module
+-current style - feed into settings->themes module
+-colorscheme - feed into themes module
+
+Data schema for modules:
+themes:
+-themeList[]
+-currentTheme
+categories:
+-categories
+-name
+-icon
+-color
+--sites[]
+---name
+---address
+---search_address
+---icon
+---color
+---subsites[]
+
+modules interaction with data:
+[x] 1 - pressing search/lucky button when query was typed
+[x] 1+2 - pressing site button when query was typed
+2 - changing order of sites/categories, moving site to different category
+3 - addding/editing site/category
+4 - importing exporting sites
+4 + x - importing/exporting data from different modules
+types of actions:
+1 - internal - ex.typing query + cliking search. All data needed to [redirect user/take action] is
+    'at site' in same module and can be send via event arguments
+2 - between modules - ex. typing query and clicking website, searches term on this website only.
+    For this action searched term from queryModule is needed and also what site button was clicked
+
+
+parts of UI:
+-logo - image that obstructs big part of site
+--can feed array of image addresses that will cycle
+--style checks image colors and generated own site colorscheme
+-query area - query input with search and 'feeling lucky' buttons
+--has keyboard shortcuts
+--query input
+--search button - redirects to search engine results page
+--lucky button - opens first result from searc engine using 'feeling lucky'
+-sites area - part of site with site categories
+--can select and 'walk around' grid using arrow keys
+--category - displays category name and keeps sites together
+---site
+----subsite - simpler to create than site
+-----can be defined only by speciying sub-site part
+-----can define paremeter and parameter value
+-editing form - allows adding/editing categories/sites
+-settings - allows for managing site
+--edit mode switcher
+---add category
+---add site
+---@[create/add][site/category] - opens form for adding/editing site/category
+---layout editor
+---force mobile/desktop
+--theme selector
+--@themeSwitch("newTheme.css")
+--import/export configuration
+---local storage
+---file
+---*pastebin
+---@import/export([localStorage/file/pastebin])
+---copy/paste text-area
+----interactive text-area
+----actions: select all, copy, paste, close
+-greeter - text saying something "hello XYZ" and weather or current date
+--features
+---hello {name} - ability to insert your name
+---weather fetching: sun/rain, temperature wind speed
+-separate screens
+-modules - displayed as part of site, have some external functionality
+--uses common interfaces
+---template/display
+---data saving/loading
+---api fetching
+--random inspiring quote
+--big clock
+--currencies
+--weather
+--random xkcd comic
+--interactive todolist
+--notes
+--pages saved for later
+--RSS feed
+-background
+
+

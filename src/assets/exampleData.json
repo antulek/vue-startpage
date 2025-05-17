@@ -1,0 +1,77 @@
+{
+  "categories": [
+    {
+      "name": "Search engines",
+      "sites": [
+        {
+          "address": "google.com",
+          "name": "google",
+          "search_address": "google.com/search?q="
+        },
+        {
+          "address": "google.com/search?udm=2&q=",
+          "name": "google images",
+          "search_address": "google.com/search?udm=2&q="
+        },
+        {
+          "address": "duckduckgo.com",
+          "name": "duckduckgo",
+          "search_address": "duckduckgo.com/?q="
+        },
+        {
+          "address": "duckduckgo.com/?ia=images&q=",
+          "name": "duckduckgo images",
+          "search_address": "duckduckgo.com/?ia=images&q="
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "sites": [
+        {
+          "address": "messenger.com"
+        },
+        {
+          "address": "discord.com/app",
+          "name": "discord"
+        }
+      ]
+    },
+    {
+      "name": "Fun",
+      "sites": [
+        {
+          "address": "youtube.com"
+        },
+        {
+          "address": "reddit.com",
+          "name": "reddit",
+          "search_address": "reddit.com/search?q="
+        },
+        {
+          "address": "reddit.com/r/funny",
+          "name": "/r/funny"
+        },
+        {
+          "address": "reddit.com/r/memes",
+          "name": "/r/memes"
+        },
+        {
+          "address": "reddit.com/r/origami",
+          "name": "/r/origami"
+        }
+      ]
+    }
+  ],
+  "logo": {
+    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/640px-Wikipedia-logo-v2.svg.png"
+  },
+  "settings": {
+    "themes": {
+      "themesList": [
+        "arizona-pink"
+      ],
+      "currentTheme": "arizona-pink"
+    }
+  }
+}
