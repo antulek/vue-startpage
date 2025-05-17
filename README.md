@@ -1,6 +1,6 @@
 # Vue Startpage
 
-[![Vue Startpage Screenshot](./screenshot.png](https://antulek.github.io/vue-startpage/)
+[![Vue Startpage Screenshot](./screenshot.png)](https://antulek.github.io/vue-startpage/)
 
 **A beautiful, minimal startpage you actually control.**  
 Organize your bookmarks into neat, customizable categories — with zero clutter and full privacy.
