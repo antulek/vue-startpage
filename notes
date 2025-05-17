@@ -33,7 +33,10 @@ roadblocks
 
 
 todo
-
+-design (visually) forms for editing/adding sites/categories
+-design (visually) how to change categories/sites order on desktop and mobile
+-make form and overlay for sites/categories editing/adding
+-make validation for forms and for sites data
 
 Core element and data flow between them
 1)query area

@@ -1,21 +1,39 @@
 {
   "categories": [
     {
-      "name": "News category",
-      "color": "#faa",
-      "icon": "🌎",
+      "name": "Search engines",
       "sites": [
         {
-          "address": "www.bbc.com",
-          "name": "BBC",
-          "search_address": "rch?q=",
-          "color": "#000",
-          "icon": "📰"
+          "address": "google.com",
+          "name": "google",
+          "search_address": "google.com/search?q="
         },
         {
-          "address": "www.bbc.com/sports",
-          "name": "BBC sports",
-          "search_address": "bbc.co.uk/search?d=SPORT_GNL&q="
+          "address": "google.com/search?udm=2&q=",
+          "name": "google images",
+          "search_address": "google.com/search?udm=2&q="
+        },
+        {
+          "address": "duckduckgo.com",
+          "name": "duckduckgo",
+          "search_address": "duckduckgo.com/?q="
+        },
+        {
+          "address": "duckduckgo.com/?ia=images&q=",
+          "name": "duckduckgo images",
+          "search_address": "duckduckgo.com/?ia=images&q="
+        }
+      ]
+    },
+    {
+      "name": "Messages",
+      "sites": [
+        {
+          "address": "messenger.com"
+        },
+        {
+          "address": "discord.com/app",
+          "name": "discord"
         }
       ]
     },
@@ -23,19 +41,24 @@
       "name": "Fun",
       "sites": [
         {
-          "address": "reddit.com"
+          "address": "youtube.com"
         },
         {
-          "address": "reddit.com/r/aww",
-          "name": "aww"
+          "address": "reddit.com",
+          "name": "reddit",
+          "search_address": "reddit.com/search?q="
         },
         {
-          "address": "reddit.com/r/cats",
-          "name": "cats"
+          "address": "reddit.com/r/funny",
+          "name": "/r/funny"
         },
         {
-          "address": "reddit.com/r/dogs",
-          "name": "dogs"
+          "address": "reddit.com/r/memes",
+          "name": "/r/memes"
+        },
+        {
+          "address": "reddit.com/r/origami",
+          "name": "/r/origami"
         }
       ]
     }
@@ -46,8 +69,6 @@
   "settings": {
     "themes": {
       "themesList": [
-        "kawaii",
-        "debug",
         "arizona-pink"
       ],
       "currentTheme": "arizona-pink"
