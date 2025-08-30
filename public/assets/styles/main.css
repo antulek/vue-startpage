@@ -52,6 +52,7 @@ BODY styles END
         grid-template-columns: auto;
         grid-template-rows: min-content;
         grid-template-areas:
+            "xkcd xkcd"
             "logo query"
             "logo categories";
     }

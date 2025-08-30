@@ -69,7 +69,7 @@
   "settings": {
     "themes": {
       "themesList": [
-        "arizona-pink"
+        "default","debug", "abstract","arizona-pink"
       ],
       "currentTheme": "arizona-pink"
     }

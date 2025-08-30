@@ -5,9 +5,11 @@ import LogoModule from "./modules/LogoModule.vue"
 import QueryModule from "./modules/QueryModule.vue"
 import CategoriesModule from "./modules/CategoriesModule.vue"
 import SettingsModule from "./modules/SettingsModule.vue"
+import XkcdComic from "./modules/funmodules/XkcdComic.vue";
 
 export default {
   components: {
+    XkcdComic,
     WebsiteSection,
     Module,
     LogoModule,
@@ -81,6 +83,11 @@ export default {
           <CategoriesModule :categories="dataStore.data.categories">
 
           </CategoriesModule>
+        </WebsiteSection>
+        <WebsiteSection container-name="xkcd">
+          <XkcdComic>
+
+          </XkcdComic>
         </WebsiteSection>
       </div>
 
