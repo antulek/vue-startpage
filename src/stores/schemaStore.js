@@ -2,6 +2,31 @@ import { defineStore } from 'pinia';
 import * as yup from 'yup';
 import { useDataStore } from "./dataStore.js";
 
+const globalSettings = yup.object({
+    settings: yup.object({
+        themes: yup.object({
+            themesList: yup.array().of(yup.string())
+                .default(["default","debug", "abstract","arizona-pink"]),
+            currentTheme: yup.string()
+                .default('arizona-pink')
+        })
+    })
+});
+const modules = {
+    logo: yup.object({
+        src: yup.string().required(),
+        scale: yup.number().default(1),
+        repeat: yup.boolean().default(false),
+        isPixelArt: yup.boolean().default(false)
+    }),
+};
+const layoutModule = yup.object({
+    x: yup.number().default(0).min(0),
+    y: yup.number().required().min(0),
+    width: yup.number().default(1).min(1),
+    height: yup.number().default(1).min(1),
+});
+
 export const useSchemaStore = defineStore('schema', {
     state: () => ({
         schema: yup.object({
@@ -16,46 +41,62 @@ export const useSchemaStore = defineStore('schema', {
                     currentTheme: yup.string().required('currentTheme is required!').default('default'),
                 }).required()
             }).required()
-        })
+        }),
+        globalSettings,
+        modules,
+        layoutModule
     }),
     actions: {
-        async validateApplicationData() {
-            try {
-                const dataStore = useDataStore(); // ✅ Access data store dynamically
-                const result = await this.schema.validate(dataStore.data, {
-                    strict: true,
-                    abortEarly: false
-                });
-                return result;
-            } catch (error) {
-                error.inner.forEach(e => {
-                    console.error(e.message, e.path);
-                });
-                console.error("Validation Error:", error.errors);
-                return null;
+        validateLayout(data, cast){
+            if(data == null){
+                throw new Error('ModuleType or data for validation was not specified!');
             }
+
+            let modulesSchema = yup.object({
+                index: yup.number().required(),
+                type: yup.string().required(),
+                layout: this.layoutModule,
+                data: yup.lazy(obj=>this.modules[obj.type] || yup.mixed())
+            });
+
+            let finalSchema =  yup.object({
+                settings: this.globalSettings,
+                layout: yup.array().of(modulesSchema)
+            }).required();
+
+            return finalSchema.validateSync(data);
         },
-        async validateModuleData(module="settings", cast=false){
-            const dataStore = useDataStore(); // ✅ Access data store dynamically
-            if(!dataStore.data.hasOwnProperty(module)){
-                throw new Error(`Data for module ${module} was not found!`);
+        validateModuleData(moduleType=null, data = null, parse=false){
+            if(moduleType == null || data == null){
+                throw new Error('ModuleType or data for validation was not specified!');
             }
 
-            try {
-                const result = await this.schema.fields[module].validate(dataStore.data[module], {
-                    strict: true,
-                    abortEarly: false,
-                });
-                console.log(result);
-                return result;
-            } catch (error) {
-                error.inner.forEach(e => {
-                    console.error(e.message, e.path);
-                });
-                console.error("Validation Error:", error.errors);
-                return null;
+            if(!this.modules.hasOwnProperty(moduleType)){
+                throw new Error('ModuleType fo this type does not have a schema defined!');
             }
 
+            let moduleSchema = this.modules[moduleType];
+            return moduleSchema.validateSync(data, {
+                strict: parse
+            });
+        },
+        validateModuleLayout(data, parse=false){
+            if(data == null){
+                throw new Error('ModuleType or data for validation was not specified!');
+            }
+
+            return this.layoutModule.validateSync(data, {
+                strict: parse
+            });
+        },
+        validateSettings(data, parse=false){
+            if(data == null){
+                throw new Error('ModuleType or data for validation was not specified!');
+            }
+
+            return this.globalSettings.validateSync(data, {
+                strict: parse
+            });
         }
     }
 });

@@ -41,6 +41,9 @@ export default {
       this.dataStore.dataTransfer('import', 'fixed-empty')
       this.dataStore.saveToLocalStorage();
     }
+  },
+  mounted() {
+    this.overlayStore.show('dataJsonEditor');
   }
 }
 </script>
@@ -53,6 +56,11 @@ export default {
       <div class="settings-item-category" @click="this.overlayStore.show('dataSitesTextEditor')">
         <div class="settings-action">
           Edit sites
+        </div>
+      </div>
+      <div class="settings-item-category" @click="this.overlayStore.show('dataJsonEditor')">
+        <div class="settings-action">
+          Edit data
         </div>
       </div>
       <div class="settings-item-category" @click="resetConfigToDefault()">

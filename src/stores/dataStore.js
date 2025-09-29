@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 import emptyData from "../assets/emptyData.json";
 import exampleData from "../assets/exampleData.json"
+import exampleApplicationData from "../assets/applicationDataExample.json"
 import {useOverlayStore} from "./overlayStore.js";
 
 export const useDataStore = defineStore('dataStore',{
@@ -18,7 +19,8 @@ export const useDataStore = defineStore('dataStore',{
 
       return {
          currentLocalStorageKey: key,
-         data: parsedData || exampleData
+         data: parsedData || exampleData,
+         exampleApplicationData: exampleApplicationData
       };
    },
    actions: {

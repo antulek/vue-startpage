@@ -61,13 +61,16 @@ settings: (holds global data)
 -style:
 --theme: "name"
 --colorscheme/colors - can be defined colorscheme, or array of custom colors
-modules: (holds data per-module and layout)
--module: (module-name)
--module-instance-id (to allow creation of multiple instances of same module)
--enabled: [true/false]
--layout data: (grid position, height, width)
--attributes: {} - props that will be passed to module
--data: {} - additional data for saving in export/import to/from local storage to module
+layout: (holds data per-module and layout)
+-layout-module-instance-id (to allow creation of multiple instances of same module)
+--enabled
+--module:
+---type
+---data
+--layout:
+---start pos
+---width
+---height
 
 
 Data schema for modules:
