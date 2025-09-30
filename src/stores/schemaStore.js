@@ -56,7 +56,7 @@ export const useSchemaStore = defineStore('schema', {
                 index: yup.number().required(),
                 type: yup.string().required(),
                 layout: this.layoutModule,
-                data: yup.lazy(obj=>this.modules[obj.type] || yup.mixed())
+                data: obj=>this.modules[obj.type] || yup.mixed()
             });
 
             let finalSchema =  yup.object({

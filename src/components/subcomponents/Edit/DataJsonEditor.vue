@@ -28,9 +28,12 @@ export default {
     close () {
       this.$emit('close')
     },
-    validate() {
+    validateApp() {
       console.log( this.schemaStore.validateLayout( JSON.parse(this.jsonData)) );
-    }
+    },
+    validateModule() {
+      console.log( this.schemaStore.validateModuleData('logo', JSON.parse(this.jsonData).layout[0].data) );
+    },
   }
 }
 </script>
@@ -45,8 +48,11 @@ export default {
       </textarea>
     </div>
     <div class="data-json-editor-footer">
-      <div class="data-json-editor-button" @click="validate">
-        validate
+      <div class="data-json-editor-button" @click="validateApp">
+        validate app data
+      </div>
+      <div class="data-json-editor-button" @click="validateModule">
+        validate module data
       </div>
     </div>
     <div class="data-json-editor-footer">
