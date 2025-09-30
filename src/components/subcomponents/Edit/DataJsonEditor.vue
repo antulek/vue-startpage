@@ -7,7 +7,7 @@ import * as yup from 'yup';
 export default {
   data(){
     return {
-      jsonData: JSON.stringify( this.dataStore.exampleApplicationData, null, 2 ),
+      jsonData: JSON.stringify( this.dataStore.data, null, 2 ),
     }
   },
   setup(){
@@ -21,6 +21,9 @@ export default {
       schemaStore,
     }
   },
+  mounted(){
+
+  },
   methods: {
     updateData(){
       this.dataStore.loadFromJSON( this.jsonData )
@@ -28,11 +31,8 @@ export default {
     close () {
       this.$emit('close')
     },
-    validateApp() {
+    validate() {
       console.log( this.schemaStore.validateLayout( JSON.parse(this.jsonData)) );
-    },
-    validateModule() {
-      console.log( this.schemaStore.validateModuleData('logo', JSON.parse(this.jsonData).layout[0].data) );
     },
   }
 }
@@ -48,11 +48,8 @@ export default {
       </textarea>
     </div>
     <div class="data-json-editor-footer">
-      <div class="data-json-editor-button" @click="validateApp">
-        validate app data
-      </div>
-      <div class="data-json-editor-button" @click="validateModule">
-        validate module data
+      <div class="data-json-editor-button" @click="validate">
+        validate
       </div>
     </div>
     <div class="data-json-editor-footer">

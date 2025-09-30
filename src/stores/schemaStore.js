@@ -18,7 +18,7 @@ const modules = {
         scale: yup.number().default(1),
         repeat: yup.boolean().default(false),
         isPixelArt: yup.boolean().default(false)
-    }),
+    }).required(),
 };
 const layoutModule = yup.object({
     x: yup.number().default(0).min(0),
@@ -47,23 +47,45 @@ export const useSchemaStore = defineStore('schema', {
         layoutModule
     }),
     actions: {
-        validateLayout(data, cast){
-            if(data == null){
+        validateLayout(data, cast) {
+            if (!data) {
                 throw new Error('ModuleType or data for validation was not specified!');
             }
 
-            let modulesSchema = yup.object({
-                index: yup.number().required(),
-                type: yup.string().required(),
-                layout: this.layoutModule,
-                data: obj=>this.modules[obj.type] || yup.mixed()
+            // Build layout item schemas for each module type
+            const layoutItemSchemas = {};
+            Object.keys(this.modules).forEach(moduleType => {
+                layoutItemSchemas[moduleType] = yup.object({
+                    index: yup.number().required(),
+                    type: yup.string().oneOf([moduleType]).required(),
+                    layout: this.layoutModule,       // reuse your layoutModule schema
+                    data: this.modules[moduleType]   // attach the corresponding Yup schema
+                });
             });
 
-            let finalSchema =  yup.object({
+            // For the layout array, use a test to dynamically pick the right schema
+            const layoutArraySchema = yup.array().of(
+                yup.lazy(item => {
+                    const type = item?.type;
+                    if (type && layoutItemSchemas[type]) {
+                        return layoutItemSchemas[type];
+                    }
+                    return yup.object({
+                        index: yup.number().required(),
+                        type: yup.string().required(),
+                        layout: this.layoutModule,
+                        data: yup.mixed()
+                    });
+                })
+            );
+
+            // Build the final schema
+            const finalSchema = yup.object({
                 settings: this.globalSettings,
-                layout: yup.array().of(modulesSchema)
+                layout: layoutArraySchema
             }).required();
 
+            // Validate synchronously
             return finalSchema.validateSync(data);
         },
         validateModuleData(moduleType=null, data = null, parse=false){

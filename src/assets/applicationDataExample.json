@@ -1,0 +1,43 @@
+{
+  "layout": [{
+    "index": 0,
+    "type": "logo",
+    "layout": {
+      "height": 1,
+      "width": 1,
+      "x": 0,
+      "y": 0
+    },
+    "data": {
+      "src": "https://i.pinimg.com/originals/fc/09/f4/fc09f4874b9bee7fd983129e3ff388a7.gif",
+      "isPixelArt": true
+    }
+  },
+  {
+    "index": 1,
+    "type": "logo",
+    "layout": {
+      "height": 1,
+      "width": 1,
+      "x": 0,
+      "y": 1
+    },
+    "data": {
+      "src": "https://cdn.shopify.com/s/files/1/0046/3234/6694/files/aa064dc5d822366e9c78f0ad2030b0b7_1024x1024.jpg?v=1624917394",
+      "isPixelArt": false
+    }
+  }],
+  "settings": {
+    "settings": {
+      "themes": {
+        "currentTheme": "arizona-pink",
+        "themesList": [
+          "default",
+          "debug",
+          "abstract",
+          "arizona-pink"
+        ]
+      }
+    }
+  }
+}
