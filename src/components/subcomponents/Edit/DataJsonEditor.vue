@@ -7,7 +7,7 @@ import * as yup from 'yup';
 export default {
   data(){
     return {
-      jsonData: JSON.stringify( this.dataStore.data, null, 2 ),
+      jsonData: JSON.stringify( this.dataStore.exampleApplicationData, null, 2 ),
     }
   },
   setup(){

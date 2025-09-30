@@ -19,6 +19,24 @@ const modules = {
         repeat: yup.boolean().default(false),
         isPixelArt: yup.boolean().default(false)
     }).required(),
+    categories: yup.object({
+        categories: yup.array().of(
+            yup.object({
+                icon: yup.string().optional(),
+                name: yup.string().required(),
+                color: yup.string().optional(),
+                sites: yup.array().of(
+                    yup.object({
+                        icon: yup.string().optional(),
+                        address: yup.string().required(),
+                        name: yup.string(),
+                        search_address: yup.string(),
+                        color: yup.string()
+                    })
+                )
+            }).required()
+        ).required()
+    }).required()
 };
 const layoutModule = yup.object({
     x: yup.number().default(0).min(0),
