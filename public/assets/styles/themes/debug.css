@@ -12,6 +12,10 @@ body {
     background-color: lightsteelblue;
 }
 
+.section {
+    border: 3px dotted red;
+}
+
 .logo-module {
     background-color: white;
     border: 3px dotted pink;

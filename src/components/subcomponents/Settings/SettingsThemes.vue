@@ -1,7 +1,8 @@
 <script>
 import {useDataStore} from "../../../stores/dataStore.js";
+import {useThemeStore} from "../../../stores/modules/themeStore.js";
 
-  export default {
+export default {
     props: {
       themesData: {
         type: Object,
@@ -22,13 +23,13 @@ import {useDataStore} from "../../../stores/dataStore.js";
     data() {
       return {
         dataStore: useDataStore(), // ✅ Store instance in `data()`
+        themeStore: useThemeStore(),
         show: false,
       };
     },
     methods: {
       theme(name){
         this.dataStore.setTheme(name);
-        console.log("Setting theme to:"+name);
       }
     }
   }

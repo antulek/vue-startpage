@@ -38,7 +38,7 @@ const modules = {
         ).required()
     }).required()
 };
-const layoutModule = yup.object({
+const gridModule = yup.object({
     x: yup.number().default(0).min(0),
     y: yup.number().required().min(0),
     width: yup.number().default(1).min(1),
@@ -62,7 +62,7 @@ export const useSchemaStore = defineStore('schema', {
         }),
         globalSettings,
         modules,
-        layoutModule
+        gridModule
     }),
     actions: {
         validateLayout(data, cast) {
@@ -76,7 +76,7 @@ export const useSchemaStore = defineStore('schema', {
                 layoutItemSchemas[moduleType] = yup.object({
                     index: yup.number().required(),
                     type: yup.string().oneOf([moduleType]).required(),
-                    layout: this.layoutModule,       // reuse your layoutModule schema
+                    grid: this.gridModule,       // reuse your gridModule schema
                     data: this.modules[moduleType]   // attach the corresponding Yup schema
                 });
             });
@@ -91,7 +91,7 @@ export const useSchemaStore = defineStore('schema', {
                     return yup.object({
                         index: yup.number().required(),
                         type: yup.string().required(),
-                        layout: this.layoutModule,
+                        grid: this.gridModule,
                         data: yup.mixed()
                     });
                 })
@@ -125,7 +125,7 @@ export const useSchemaStore = defineStore('schema', {
                 throw new Error('ModuleType or data for validation was not specified!');
             }
 
-            return this.layoutModule.validateSync(data, {
+            return this.gridModule.validateSync(data, {
                 strict: parse
             });
         },

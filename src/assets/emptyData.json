@@ -1,77 +1,114 @@
 {
-  "categories": [
-    {
-      "name": "Search engines",
-      "sites": [
-        {
-          "address": "google.com",
-          "name": "google",
-          "search_address": "google.com/search?q="
-        },
-        {
-          "address": "google.com/search?udm=2&q=",
-          "name": "google images",
-          "search_address": "google.com/search?udm=2&q="
-        },
-        {
-          "address": "duckduckgo.com",
-          "name": "duckduckgo",
-          "search_address": "duckduckgo.com/?q="
-        },
-        {
-          "address": "duckduckgo.com/?ia=images&q=",
-          "name": "duckduckgo images",
-          "search_address": "duckduckgo.com/?ia=images&q="
-        }
-      ]
+  "layout": [{
+    "index": 0,
+    "type": "logo",
+    "grid": {
+      "height": 1,
+      "width": 1,
+      "x": 0,
+      "y": 0
     },
-    {
-      "name": "Messages",
-      "sites": [
-        {
-          "address": "messenger.com"
-        },
-        {
-          "address": "discord.com/app",
-          "name": "discord"
-        }
-      ]
-    },
-    {
-      "name": "Fun",
-      "sites": [
-        {
-          "address": "youtube.com"
-        },
-        {
-          "address": "reddit.com",
-          "name": "reddit",
-          "search_address": "reddit.com/search?q="
-        },
-        {
-          "address": "reddit.com/r/funny",
-          "name": "/r/funny"
-        },
-        {
-          "address": "reddit.com/r/memes",
-          "name": "/r/memes"
-        },
-        {
-          "address": "reddit.com/r/origami",
-          "name": "/r/origami"
-        }
-      ]
+    "data": {
+      "src": "https://i.pinimg.com/originals/fc/09/f4/fc09f4874b9bee7fd983129e3ff388a7.gif",
+      "isPixelArt": true
     }
-  ],
-  "logo": {
-    "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/640px-Wikipedia-logo-v2.svg.png"
   },
+    {
+      "index": 1,
+      "type": "categories",
+      "grid": {
+        "y": 1
+      },
+      "data": {
+        "categories": [
+          {
+            "name": "Search engines",
+            "sites": [
+              {
+                "address": "google.com",
+                "name": "google",
+                "search_address": "google.com/search?q="
+              },
+              {
+                "address": "google.com/search?udm=2&q=",
+                "name": "google images",
+                "search_address": "google.com/search?udm=2&q="
+              },
+              {
+                "address": "duckduckgo.com",
+                "name": "duckduckgo",
+                "search_address": "duckduckgo.com/?q="
+              },
+              {
+                "address": "duckduckgo.com/?ia=images&q=",
+                "name": "duckduckgo images",
+                "search_address": "duckduckgo.com/?ia=images&q="
+              }
+            ]
+          },
+          {
+            "name": "Messages",
+            "sites": [
+              {
+                "address": "messenger.com"
+              },
+              {
+                "address": "discord.com/app",
+                "name": "discord"
+              }
+            ]
+          },
+          {
+            "name": "Fun",
+            "sites": [
+              {
+                "address": "youtube.com"
+              },
+              {
+                "address": "reddit.com",
+                "name": "reddit",
+                "search_address": "reddit.com/search?q="
+              },
+              {
+                "address": "reddit.com/r/funny",
+                "name": "/r/funny"
+              },
+              {
+                "address": "reddit.com/r/memes",
+                "name": "/r/memes"
+              },
+              {
+                "address": "reddit.com/r/origami",
+                "name": "/r/origami"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "type": "logo",
+      "grid": {
+        "height": 1,
+        "width": 1,
+        "x": 0,
+        "y": 2
+      },
+      "data": {
+        "src": "https://cdn.shopify.com/s/files/1/0046/3234/6694/files/aa064dc5d822366e9c78f0ad2030b0b7_1024x1024.jpg?v=1624917394",
+        "isPixelArt": false
+      }
+    }],
   "settings": {
     "themes": {
+      "currentTheme": "debug",
       "themesList": [
-        "default","debug", "abstract","arizona-pink"
-      ],
-      "currentTheme": "arizona-pink"
+        "default",
+        "debug",
+        "abstract",
+        "arizona-pink"
+      ]
     }
   }
 }

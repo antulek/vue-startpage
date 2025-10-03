@@ -51,10 +51,12 @@ BODY styles END
         display: grid;
         grid-template-columns: auto;
         grid-template-rows: min-content;
+        /*
         grid-template-areas:
             "xkcd xkcd"
             "logo query"
             "logo categories";
+         */
     }
 }
 /* WebsiteLayout.vue END */

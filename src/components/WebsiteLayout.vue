@@ -6,6 +6,7 @@ import QueryModule from "./modules/QueryModule.vue"
 import CategoriesModule from "./modules/CategoriesModule.vue"
 import SettingsModule from "./modules/SettingsModule.vue"
 import XkcdComic from "./modules/funmodules/XkcdComic.vue";
+import {useThemeStore} from "../stores/modules/themeStore.js";
 
 export default {
   components: {
@@ -59,6 +60,7 @@ export default {
       logo: {
         src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Wikipedia-logo-v2.svg/640px-Wikipedia-logo-v2.svg.png"
       },
+      themeStore: useThemeStore(),
     }
 
 
@@ -67,10 +69,18 @@ export default {
 </script>
 <template>
   <slot>
-    <div class="website-layout">
+    <div class="website-layout" >
       <div class="website-header">
       </div>
-      <div class="website-layout-grid">
+      <div class="website-layout-grid" :style="themeStore.getGridTemplateAreas">
+        <template v-for="module in dataStore.data.layout" :key="module.index">
+          <website-section :container-name="module.type+module.index">
+            <component :is="module.type+`-module`" v-bind="module.data">
+
+            </component>
+          </website-section>
+        </template>
+        <!--
         <WebsiteSection container-name="logo">
           <LogoModule v-bind="dataStore.data.logo">
             L.O.G.O
@@ -89,8 +99,8 @@ export default {
 
           </XkcdComic>
         </WebsiteSection>
+        -->
       </div>
-
       <div class="website-footer">
         <SettingsModule :settings-data="dataStore.data.settings"></SettingsModule>
       </div>

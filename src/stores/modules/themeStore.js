@@ -15,6 +15,23 @@ export const useThemeStore = defineStore('themeStore', {
             }
 
             return './assets/styles/themes/'+theme+'.css';
+        },
+        getGridTemplateAreas() {
+            const dataStore = useDataStore();
+
+            // collect modules grouped by Y
+            let rows = [];
+            dataStore.data.layout.forEach((module) => {
+                const name = module.type + module.index;
+                rows[module.grid.y] = `"${name}"`; // each row is one module
+            });
+
+            // join rows with newlines
+            const template = rows.join("\n");
+
+            console.log("grid-template-areas:\n" + template);
+
+            return { gridTemplateAreas: template };
         }
     },
     actions: {
