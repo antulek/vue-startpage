@@ -1,23 +1,38 @@
 {
-  "layout": [{
-    "index": 0,
-    "type": "logo",
-    "grid": {
-      "height": 1,
-      "width": 1,
-      "x": 0,
-      "y": 0
+  "layout": [
+    {
+      "index": 0,
+      "type": "logo",
+      "grid": {
+        "height": 1,
+        "width": 3,
+        "x": 0,
+        "y": 0
+      },
+      "data": {
+        "src": "https://i.pinimg.com/originals/fc/09/f4/fc09f4874b9bee7fd983129e3ff388a7.gif",
+        "isPixelArt": true,
+        "scale": 200
+      }
     },
-    "data": {
-      "src": "https://i.pinimg.com/originals/fc/09/f4/fc09f4874b9bee7fd983129e3ff388a7.gif",
-      "isPixelArt": true
-    }
-  },
+    {
+      "index": 66,
+      "type": "query",
+      "grid": {
+        "height": 1,
+        "width": 2,
+        "x": 0,
+        "y": 1
+      }
+    },
     {
       "index": 1,
       "type": "categories",
       "grid": {
-        "y": 1
+        "height": 1,
+        "width": 2,
+        "x": 0,
+        "y": 2
       },
       "data": {
         "categories": [
@@ -90,10 +105,10 @@
       "index": 2,
       "type": "logo",
       "grid": {
-        "height": 1,
+        "height": 2,
         "width": 1,
-        "x": 0,
-        "y": 2
+        "x": 2,
+        "y": 1
       },
       "data": {
         "src": "https://cdn.shopify.com/s/files/1/0046/3234/6694/files/aa064dc5d822366e9c78f0ad2030b0b7_1024x1024.jpg?v=1624917394",

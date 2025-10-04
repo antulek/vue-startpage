@@ -24,6 +24,9 @@ export const useDataStore = defineStore('dataStore',{
       };
    },
    actions: {
+      setData(data){
+         this.data = {...JSON.parse( JSON.stringify( data ))}
+      },
       /* Local Storage START */
       loadFromLocalStorage(localStorageKey = null){
          if(localStorageKey === null){

@@ -71,8 +71,14 @@ export default {
   <slot>
     <div class="website-layout" >
       <div class="website-header">
+        <button @click="themeStore.shuffleModules()">
+          Shuffle +1
+        </button>
+        <button @click="themeStore.nukeData()">
+          NUKE
+        </button>
       </div>
-      <div class="website-layout-grid" :style="themeStore.getGridTemplateAreas">
+      <div class="website-layout-grid" :style="themeStore.getGridTemplateAreas2D">
         <template v-for="module in dataStore.data.layout" :key="module.index">
           <website-section :container-name="module.type+module.index">
             <component :is="module.type+`-module`" v-bind="module.data">

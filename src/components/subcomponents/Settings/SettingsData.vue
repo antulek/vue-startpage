@@ -40,6 +40,10 @@ export default {
     resetConfigToDefault(){
       this.dataStore.dataTransfer('import', 'fixed-empty')
       this.dataStore.saveToLocalStorage();
+    },
+    loadExample(){
+      this.dataStore.dataTransfer('import', 'fixed-default')
+      this.dataStore.saveToLocalStorage();
     }
   },
   mounted() {
@@ -66,6 +70,11 @@ export default {
       <div class="settings-item-category" @click="resetConfigToDefault()">
         <div class="settings-action">
           Reset to default
+        </div>
+      </div>
+      <div class="settings-item-category" @click="loadExample()">
+        <div class="settings-action">
+          Load example
         </div>
       </div>
     </div>
