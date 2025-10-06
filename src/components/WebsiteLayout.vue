@@ -5,18 +5,20 @@ import LogoModule from "./modules/LogoModule.vue"
 import QueryModule from "./modules/QueryModule.vue"
 import CategoriesModule from "./modules/CategoriesModule.vue"
 import SettingsModule from "./modules/SettingsModule.vue"
-import XkcdComic from "./modules/funmodules/XkcdComic.vue";
+import XkcdComicModule from "./modules/funmodules/XkcdComicModule.vue";
+import DiceModule from "./modules/funmodules/DiceModule.vue";
 import {useThemeStore} from "../stores/modules/themeStore.js";
 
 export default {
   components: {
-    XkcdComic,
+    XkcdComicModule,
     WebsiteSection,
     Module,
     LogoModule,
     QueryModule,
     CategoriesModule,
-    SettingsModule
+    SettingsModule,
+    DiceModule
   },
   props: {
     dataStore: {
@@ -101,9 +103,9 @@ export default {
           </CategoriesModule>
         </WebsiteSection>
         <WebsiteSection container-name="xkcd">
-          <XkcdComic>
+          <XkcdComicModule>
 
-          </XkcdComic>
+          </XkcdComicModule>
         </WebsiteSection>
         -->
       </div>

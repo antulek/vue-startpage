@@ -109,6 +109,7 @@ export const useThemeStore = defineStore('themeStore', {
             // Replace layout array reference (reactive-safe)
             let newData = { ...dataStore.data, layout: newLayout };
             dataStore.setData(newData);
+            dataStore.saveToLocalStorage();
         },
         nukeData(){
             let dataStore = useDataStore();
