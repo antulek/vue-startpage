@@ -88,32 +88,5 @@ export const useThemeStore = defineStore('themeStore', {
             return ( (b.x+b.width-1)>=a.x && b.x<=(a.x+a.width-1) &&
                 (b.y+b.height-1)>=a.y && b.y<=(a.y+a.height-1));
         },
-        shuffleModules(step = 1) {
-            const dataStore = useDataStore();
-
-            // Make a copy of layout array
-            const layoutBackup = [...dataStore.data.layout];
-            const length = layoutBackup.length;
-
-            // Build new layout with shuffled grids
-            const newLayout = layoutBackup.map((module, i) => {
-                const targetIndex = (i + step) % length;
-
-                // Copy module, but replace grid with target module's grid
-                return {
-                    ...module,
-                    grid: { ...layoutBackup[targetIndex].grid }
-                };
-            });
-
-            // Replace layout array reference (reactive-safe)
-            let newData = { ...dataStore.data, layout: newLayout };
-            dataStore.setData(newData);
-            dataStore.saveToLocalStorage();
-        },
-        nukeData(){
-            let dataStore = useDataStore();
-            dataStore.setData({});
-        }
     }
 });

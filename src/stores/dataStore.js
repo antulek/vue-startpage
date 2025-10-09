@@ -2,6 +2,7 @@ import { defineStore } from "pinia";
 import emptyData from "../assets/emptyData.json";
 import exampleData from "../assets/exampleData.json"
 import exampleApplicationData from "../assets/applicationDataExample.json"
+import exampleConfigurations from "../assets/exampleConfigs/exampleConfigurations.json"
 import {useOverlayStore} from "./overlayStore.js";
 
 export const useDataStore = defineStore('dataStore',{
@@ -91,6 +92,13 @@ export const useDataStore = defineStore('dataStore',{
          }
 
          console.log("action:"+action+" "+(action == "import" ? 'from' : 'to')+" "+storage);
+      },
+      loadExampleData(name){
+         if(!exampleConfigurations.hasOwnProperty(name)){
+            console.error("Configuration by name: "+name+" was not found!");
+            return;
+         }
+         this.data = {...exampleConfigurations[name]};
       },
       setTheme(name){
          this.data.settings.themes.currentTheme = name;

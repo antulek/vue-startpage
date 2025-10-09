@@ -34,15 +34,8 @@ export default {
     };
   },
   methods: {
-    data(action, storage){
-      alert(action+" from "+storage)
-    },
-    resetConfigToDefault(){
-      this.dataStore.dataTransfer('import', 'fixed-empty')
-      this.dataStore.saveToLocalStorage();
-    },
-    loadExample(){
-      this.dataStore.dataTransfer('import', 'fixed-default')
+    loadExampleConfiguration(name){
+      this.dataStore.loadExampleData(name);
       this.dataStore.saveToLocalStorage();
     }
   },
@@ -67,14 +60,9 @@ export default {
           Edit data
         </div>
       </div>
-      <div class="settings-item-category" @click="resetConfigToDefault()">
+      <div class="settings-item-category" @click="loadExampleConfiguration('default')">
         <div class="settings-action">
-          Reset to default
-        </div>
-      </div>
-      <div class="settings-item-category" @click="loadExample()">
-        <div class="settings-action">
-          Load example
+          Load default
         </div>
       </div>
     </div>

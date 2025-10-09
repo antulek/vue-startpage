@@ -7,7 +7,7 @@ import * as yup from 'yup';
 export default {
   data(){
     return {
-      jsonData: JSON.stringify( this.dataStore.exampleApplicationData, null, 2 ),
+      jsonData: JSON.stringify( this.dataStore.data, null, 2 ),
     }
   },
   setup(){
@@ -25,8 +25,11 @@ export default {
 
   },
   methods: {
-    updateData(){
-      this.dataStore.loadFromJSON( this.jsonData )
+    updateData(save){
+      if(save)
+        this.dataStore.saveToLocalStorage(JSON.parse(this.jsonData));
+      this.dataStore.loadFromJSON( this.jsonData );
+      this.close();
     },
     close () {
       this.$emit('close')
@@ -53,8 +56,11 @@ export default {
       </div>
     </div>
     <div class="data-json-editor-footer">
-      <div class="data-json-editor-button" @click="updateData">
-        save
+      <div class="data-json-editor-button" @click="updateData(false)">
+        save as temp
+      </div>
+      <div class="data-json-editor-button" @click="updateData(true)">
+        save to Memory
       </div>
       <div class="data-json-editor-button" @click="close()">
         cancel

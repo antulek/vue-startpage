@@ -36,7 +36,12 @@ export default {
     },
     saveSites(){
       let parsed = this.sitesTextEditorStore.parseInput(this.rawConfig);
-      this.dataStore.data['categories'] = parsed;
+      let categoriesModule = this.dataStore.data.layout.find((item,key) => {
+        if(item.type == "categories"){
+          item.data.categories = parsed;
+          return item;
+        }
+      });
       this.dataStore.saveToLocalStorage()
       this.close();
     }
@@ -51,7 +56,10 @@ export default {
   },
   created() {
     this.debouncedParseInput = this.debounceEvent(this.sitesTextEditorStore.parseInput);
-    this.rawConfig = this.sitesTextEditorStore.stringifyCurrentSites( this.dataStore.data.categories );
+    let categoriesModule = this.dataStore.data.layout.find((item) => {
+      if(item.type == "categories")return item;
+    });
+    this.rawConfig = this.sitesTextEditorStore.stringifyCurrentSites( categoriesModule.data.categories );
   }
 }
 </script>
