@@ -60,9 +60,12 @@ export default {
           Edit data
         </div>
       </div>
-      <div class="settings-item-category" @click="loadExampleConfiguration('default')">
-        <div class="settings-action">
+      <div class="settings-item-category">
+        <div class="settings-action" @click="loadExampleConfiguration('default')">
           Load default
+        </div>
+        <div class="settings-action" @click="loadExampleConfiguration('images')">
+          Load IMAGES
         </div>
       </div>
     </div>

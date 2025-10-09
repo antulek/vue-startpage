@@ -5,7 +5,7 @@
         "index": 0,
         "type": "logo",
         "grid": {
-          "height": 2,
+          "height": 1,
           "width": 1,
           "x": 0,
           "y": 0
@@ -13,6 +13,135 @@
         "data": {
           "src": "https://cdn.shopify.com/s/files/1/0046/3234/6694/files/aa064dc5d822366e9c78f0ad2030b0b7_1024x1024.jpg?v=1624917394",
           "isPixelArt": false
+        }
+      },
+      {
+        "index": 1,
+        "type": "query",
+        "grid": {
+          "height": 1,
+          "width": 1,
+          "x": 1,
+          "y": 0
+        }
+      },
+      {
+        "index": 2,
+        "type": "categories",
+        "grid": {
+          "height": 1,
+          "width": 1,
+          "x": 1,
+          "y": 1
+        },
+        "data": {
+          "categories": [
+            {
+              "name": "Search engines",
+              "sites": [
+                {
+                  "address": "google.com",
+                  "name": "google",
+                  "search_address": "google.com/search?q="
+                },
+                {
+                  "address": "google.com/search?udm=2&q=",
+                  "name": "google images",
+                  "search_address": "google.com/search?udm=2&q="
+                },
+                {
+                  "address": "duckduckgo.com",
+                  "name": "duckduckgo",
+                  "search_address": "duckduckgo.com/?q="
+                },
+                {
+                  "address": "duckduckgo.com/?ia=images&q=",
+                  "name": "duckduckgo images",
+                  "search_address": "duckduckgo.com/?ia=images&q="
+                }
+              ]
+            },
+            {
+              "name": "Messages",
+              "sites": [
+                {
+                  "address": "messenger.com"
+                },
+                {
+                  "address": "discord.com/app",
+                  "name": "discord"
+                }
+              ]
+            },
+            {
+              "name": "Fun",
+              "sites": [
+                {
+                  "address": "youtube.com"
+                },
+                {
+                  "address": "reddit.com",
+                  "name": "reddit",
+                  "search_address": "reddit.com/search?q="
+                },
+                {
+                  "address": "reddit.com/r/funny",
+                  "name": "/r/funny"
+                },
+                {
+                  "address": "reddit.com/r/memes",
+                  "name": "/r/memes"
+                },
+                {
+                  "address": "reddit.com/r/origami",
+                  "name": "/r/origami"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "settings": {
+      "themes": {
+        "currentTheme": "debug",
+        "themesList": [
+          "default",
+          "debug",
+          "abstract",
+          "arizona-pink"
+        ]
+      }
+    }
+  },
+  "images": {
+    "layout": [
+      {
+        "index": 0,
+        "type": "logo",
+        "grid": {
+          "height": 2,
+          "width": 1,
+          "x": 0,
+          "y": 0
+        },
+        "data": {
+          "src": "https://ih1.redbubble.net/image.2074751495.7654/flat,750x,075,f-pad,750x1000,f8f8f8.jpg",
+          "scale": 110
+        }
+      },
+      {
+        "index": 3,
+        "type": "logo",
+        "grid": {
+          "height": 1,
+          "width": 2,
+          "x": 0,
+          "y": 2
+        },
+        "data": {
+          "src": "https://i.pinimg.com/736x/da/5b/a4/da5ba4259c4370e47ff3b7b529760b28.jpg",
+          "scale": 100
         }
       },
       {
