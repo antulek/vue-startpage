@@ -67,6 +67,12 @@ export default {
         <div class="settings-action" @click="loadExampleConfiguration('images')">
           Load IMAGES
         </div>
+        <div class="settings-action" @click="loadExampleConfiguration('compact')">
+          Load compact
+        </div>
+        <div class="settings-action" @click="loadExampleConfiguration('unity')">
+          Load unity
+        </div>
       </div>
     </div>
   </div>

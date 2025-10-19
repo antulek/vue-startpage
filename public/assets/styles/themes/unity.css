@@ -1,0 +1,57 @@
+:root {
+    --global-padding: 5px;
+    --module-padding: 10px;
+    --categories-padding: 10px;
+}
+
+.website-layout {
+
+}
+
+.website-layout-grid {
+    padding-inline: 100px;
+    margin: auto;
+
+    flex-grow: 0;
+    height: fit-content;
+    width: 70%;
+    box-shadow: 16px 16px 0 0 rgba(0,0,0,0.35);
+    padding: calc(-1 * var(--global-padding));
+}
+
+.module {
+    padding: var(--module-padding);
+    border: 1px solid black;
+    margin-bottom: -1px;
+    margin-right: -1px;
+}
+
+/* Target .module that has a .query-module inside */
+.module:has(.query-module) {
+    max-height: fit-content;
+}
+
+/* Target the .query-module itself */
+.module .query-module {
+    max-height: fit-content;
+}
+
+.query-module input, .query-module button {
+    background-color: white;
+    border: 1px solid black;
+    margin-right: -1px;
+}
+
+
+
+.categories-module {
+    margin: calc(-1 * var(--categories-padding));
+}
+
+.category {
+    padding: var(--categories-padding);
+}
+
+.category-header {
+    border-bottom: 1px dotted black;
+}

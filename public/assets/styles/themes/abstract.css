@@ -1,0 +1,24 @@
+:root {
+    --logo-image-src: url("https://i.pinimg.com/originals/fc/09/f4/fc09f4874b9bee7fd983129e3ff388a7.gif")
+}
+
+.website-layout-grid {
+    grid-template-areas:
+        "logo"
+        "query"
+        "categories";
+}
+
+.logo-module {
+    
+}
+
+.logo-module-alternative {
+    background-image: var(--logo-image-src);
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: repeat;
+    min-height: 100px;
+    max-width: 600px;
+    margin: auto;
+}
